@@ -1,1 +1,1 @@
-<?php return 'production';
+<?php return 'development';
