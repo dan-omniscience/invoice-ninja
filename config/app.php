@@ -15,7 +15,7 @@ return [
 	|
 	*/
 
-	'debug' => env('APP_DEBUG', TRUE),
+	'debug' => env('APP_DEBUG', ''),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'url' => env('APP_URL', 'ninja.local'),
+	'url' => env('APP_URL', ''),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'locale' => env('APP_LOCALE', 'il_HE'),
+	'locale' => env('APP_LOCALE', 'en'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'UAHnwBoSNn8q986G'),
+	'key' => env('APP_KEY', ''),
 
 	'cipher' => env('APP_CIPHER', MCRYPT_RIJNDAEL_128),
 
@@ -144,7 +144,6 @@ return [
 		'Bootstrapper\BootstrapperL5ServiceProvider',
 		'Former\FormerServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
-		'Barryvdh\TranslationManager\ManagerServiceProvider',
 		'Chumper\Datatable\DatatableServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
     	'Webpatser\Countries\CountriesServiceProvider',
@@ -159,7 +158,6 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
-
 	],
 
 	/*
