@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return array(
 
@@ -13,8 +13,8 @@ return array(
 	|
 	*/
 
-	'previous' => '&laquo; Tilbake',
+	'previous' => '&laquo; הקודם',
 
-	'next'     => 'Neste &raquo;',
+	'next'     => 'הבא &raquo;',
 
 );

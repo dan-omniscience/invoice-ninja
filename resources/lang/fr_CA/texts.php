@@ -1,8 +1,6 @@
-<?php 
+<?php
 
-return array(
-
-  // client
+return array (
   'organization' => 'Entreprise',
   'name' => 'Nom',
   'website' => 'Site web',
@@ -14,7 +12,7 @@ return array(
   'state' => 'Région/Département',
   'postal_code' => 'Code Postal',
   'country_id' => 'Pays',
-  'contacts' => 'Informations de contact', //if you speak about contact details
+  'contacts' => 'Informations de contact',
   'first_name' => 'Prénom',
   'last_name' => 'Nom',
   'phone' => 'Téléphone',
@@ -23,10 +21,8 @@ return array(
   'payment_terms' => 'Conditions de paiement',
   'currency_id' => 'Devise',
   'size_id' => 'Taille',
-  'industry_id' => 'Secteur', // literal translation : Industrie
+  'industry_id' => 'Secteur',
   'private_notes' => 'Note personnelle',
-
-  // invoice
   'invoice' => 'Facture',
   'client' => 'Client',
   'invoice_date' => 'Date de la facture',
@@ -35,22 +31,21 @@ return array(
   'invoice_number_short' => 'Facture #',
   'po_number' => 'Numéro du bon de commande',
   'po_number_short' => 'Bon de commande #',
-  'frequency_id' => 'Fréquence', 
+  'frequency_id' => 'Fréquence',
   'discount' => 'Remise',
   'taxes' => 'Taxes',
   'tax' => 'Taxe',
-  'item' => 'Article', 
+  'item' => 'Article',
   'description' => 'Description',
   'unit_cost' => 'Coût unitaire',
   'quantity' => 'Quantité',
   'line_total' => 'Total',
   'subtotal' => 'Total',
-  'paid_to_date' => 'Versé à ce jour',//this one is not very used in France
-  'balance_due' => 'Montant total',//can be "Montant à verser" or "Somme totale"
-  'invoice_design_id' => 'Design', //if you speak about invoice's design -> "Modèle"
+  'paid_to_date' => 'Versé à ce jour',
+  'balance_due' => 'Montant total',
+  'invoice_design_id' => 'Design',
   'terms' => 'Conditions',
   'your_invoice' => 'Votre Facture',
-
   'remove_contact' => 'Supprimer un contact',
   'add_contact' => 'Ajouter un contact',
   'create_new_client' => 'Ajouter un nouveau client',
@@ -74,8 +69,6 @@ return array(
   'settings' => 'Paramètres',
   'enable_invoice_tax' => 'Spécifier une <br>taxe pour la facture</b>',
   'enable_line_item_tax' => 'Spécifier une <b>taxe pour chaque ligne</b>',
-
-  // navigation
   'dashboard' => 'Tableau de bord',
   'clients' => 'Clients',
   'invoices' => 'Factures',
@@ -100,8 +93,6 @@ return array(
   'provide_email' => 'Veuillez renseigner une adresse courriel valide',
   'powered_by' => 'Propulsé par',
   'no_items' => 'Aucun élément',
-
-  // recurring invoices
   'recurring_invoices' => 'Factures récurrentes',
   'recurring_help' => '<p>Envoyer automatiquement la même facture à vos clients de façon hebdomadaire, bimensuelle, mensuelle, trimestrielle ou annuelle.</p>
         <p>Utiliser :MONTH, :QUARTER ou :YEAR pour des dates dynamiques. Les opérations simples fonctionnent également, par exemple :MONTH-1.</p>
@@ -111,18 +102,14 @@ return array(
           <li>":YEAR+1 - abonnement annuel" => "2015 - abonnement annuel"</li>
           <li>"Acompte pour le :QUARTER+1" => "Acompte pour le Q2"</li>
         </ul>',
-
-  // dashboard
   'in_total_revenue' => 'de bénéfice total',
   'billed_client' => 'client facturé',
   'billed_clients' => 'clients facturés',
   'active_client' => 'client actif',
-  'active_clients' => 'clients actifs',  
+  'active_clients' => 'clients actifs',
   'invoices_past_due' => 'Date limite de paiement dépassée',
   'upcoming_invoices' => 'Factures à venir',
   'average_invoice' => 'Moyenne de facturation',
-  
-  // list pages
   'archive' => 'Archiver',
   'delete' => 'Supprimer',
   'archive_client' => 'Archiver ce client',
@@ -158,8 +145,6 @@ return array(
   'select' => 'Sélectionner',
   'edit_client' => 'Éditer le Client',
   'edit_invoice' => 'Éditer la Facture',
-
-  // client view page
   'create_invoice' => 'Créer une facture',
   'enter_credit' => 'Saisissez un crédit',
   'last_logged_in' => 'Dernière connexion',
@@ -171,12 +156,8 @@ return array(
   'message' => 'Message',
   'adjustment' => 'Réglements',
   'are_you_sure' => 'Voulez-vous vraiment effectuer cette action ?',
-
-  // payment pages
   'payment_type_id' => 'Type de paiement',
   'amount' => 'Montant',
-
-  // account/company pages
   'work_email' => 'Courriel',
   'language_id' => 'Langage',
   'timezone_id' => 'Fuseau horaire',
@@ -208,8 +189,6 @@ return array(
   'clients_will_create' => 'clients seront créés',
   'email_settings' => 'Email Settings',
   'pdf_email_attachment' => 'Attach PDF to Emails',
-
-  // application messages
   'created_client' => 'Client créé avec succès',
   'created_clients' => ':count clients créés ave csuccès',
   'updated_settings' => 'paramètres mis à jour avec succès',
@@ -220,14 +199,11 @@ return array(
   'payment_error' => 'Il y a eu une erreur lors du traitement de votre paiement. Veuillez réessayer ultérieurement',
   'registration_required' => 'Veuillez vous enregistrer pour envoyer une facture par courriel',
   'confirmation_required' => 'Veuillez confirmer votre adresse courriel',
-
   'updated_client' => 'Client modifié avec succès',
-  'created_client' => 'Client créé avec succès',
   'archived_client' => 'Client archivé avec succès',
   'archived_clients' => ':count clients archivés avec succès',
   'deleted_client' => 'Client supprimé avec succès',
   'deleted_clients' => ':count clients supprimés avec succès',
-
   'updated_invoice' => 'Facture modifiée avec succès',
   'created_invoice' => 'Facture créée avec succès',
   'cloned_invoice' => 'Facture dupliquée avec succès',
@@ -237,21 +213,17 @@ return array(
   'archived_invoices' => ':count factures archivées avec succès',
   'deleted_invoice' => 'Facture supprimée avec succès',
   'deleted_invoices' => ':count factures supprimées avec succès',
-
   'created_payment' => 'Paiement créé avec succès',
   'archived_payment' => 'Paiement archivé avec succès',
   'archived_payments' => ':count paiement archivés avec succès',
   'deleted_payment' => 'Paiement supprimé avec succès',
   'deleted_payments' => ':count paiement supprimés avec succès',
   'applied_payment' => 'Paiement appliqué avec succès',
-
   'created_credit' => 'Crédit créé avec succès',
   'archived_credit' => 'Crédit archivé avec succès',
   'archived_credits' => ':count crédits archivés avec succès',
   'deleted_credit' => 'Crédit supprimé avec succès',
   'deleted_credits' => ':count crédits supprimés avec succès',
-
-    // Emails
   'confirmation_subject' => 'Validation du compte invoice ninja',
   'confirmation_header' => 'Validation du compte',
   'confirmation_message' => 'Veuillez cliquer sur le lien ci-après pour valider votre compte.',
@@ -262,7 +234,7 @@ return array(
   'email_salutation' => 'Cher :name,',
   'email_signature' => 'Cordialement,',
   'email_from' => 'L\'équipe InvoiceNinja',
-  'user_email_footer' => 'Pour modifier vos paramètres de notification par courriel, veuillez visiter '.SITE_URL.'/company/notifications',
+  'user_email_footer' => 'Pour modifier vos paramètres de notification par courriel, veuillez visiter https://ninja.local/company/notifications',
   'invoice_link_message' => 'Pour voir la facture de votre client cliquez sur le lien ci-après :',
   'notification_invoice_paid_subject' => 'La facture :invoice a été payée par le client :client',
   'notification_invoice_sent_subject' => 'La facture :invoice a été envoyée au client :client',
@@ -271,17 +243,14 @@ return array(
   'notification_invoice_sent' => 'Le client suivant :client a reçu par courriel la facture :invoice d\'un montant de :amount',
   'notification_invoice_viewed' => 'Le client suivant :client a vu la facture :invoice d\'un montant de :amount',
   'reset_password' => 'Vous pouvez réinitialiser votre mot de passe en cliquant sur le lien suivant :',
-  'reset_password_footer' => 'Si vous n\'avez pas effectué de demande de réinitalisation de mot de passe veuillez contacter notre support :' . CONTACT_EMAIL,
-
-  // Payment page
+  'reset_password_footer' => 'Si vous n\'avez pas effectué de demande de réinitalisation de mot de passe veuillez contacter notre support :dan@omniscience.co.il',
   'secure_payment' => 'Paiement sécurisé',
   'card_number' => 'Numéro de carte',
-  'expiration_month' => 'Mois d\'expiration',  
+  'expiration_month' => 'Mois d\'expiration',
   'expiration_year' => 'Année d\'expiration',
   'cvv' => 'CVV',
-
-  // Security alerts
-  'confide' => array(
+  'confide' => 
+  array (
     'too_many_attempts' => 'Trop de tentatives. Essayez à nouveau dans quelques minutes.',
     'wrong_credentials' => 'Courriel ou mot de passe incorrect',
     'confirmation' => 'Votre compte a été validé !',
@@ -290,16 +259,14 @@ return array(
     'password_reset' => 'Votre mot de passe a été modifié avec succès.',
     'wrong_password_reset' => 'Mot de passe incorrect. Veuillez réessayer',
   ),
-
-  // Pro Plan
-  'pro_plan' => [
+  'pro_plan' => 
+  array (
     'remove_logo' => ':link pour supprimer le logo Invoice Ninja en souscrivant au plan pro',
     'remove_logo_link' => 'Cliquez ici',
-  ],
-
-  'logout' => 'Se déconnecter',    
-  'sign_up_to_save' => 'Connectez vous pour sauvegarder votre travail',  
-  'agree_to_terms' =>'J\'accepte les conditions d\'utilisation d\'Invoice ninja :terms',
+  ),
+  'logout' => 'Se déconnecter',
+  'sign_up_to_save' => 'Connectez vous pour sauvegarder votre travail',
+  'agree_to_terms' => 'J\'accepte les conditions d\'utilisation d\'Invoice ninja :terms',
   'terms_of_service' => 'Conditions d\'utilisation',
   'email_taken' => 'L\'adresse courriel existe déjà',
   'working' => 'En cours',
@@ -307,11 +274,9 @@ return array(
   'success_message' => 'Inscription réussie avec succès. Veuillez cliquer sur le lien dans le courriel de confirmation de compte pour vérifier votre adresse courriel.',
   'erase_data' => 'Cela supprimera vos données de façon permanente.',
   'password' => 'Mot de passe',
-
   'pro_plan_product' => 'Plan Pro',
   'pro_plan_description' => 'Inscription d\'une durée d\'un an au Plan Pro d\'Invoice ninja',
   'pro_plan_success' => 'Merci pour votre inscription ! Une fois la facture réglée, votre adhésion au Plan Pro commencera.',
-
   'unsaved_changes' => 'Vous avez des modifications non enregistrées',
   'custom_fields' => 'Champs personnalisés',
   'company_fields' => 'Champs de société',
@@ -319,9 +284,7 @@ return array(
   'field_label' => 'Nom du champ',
   'field_value' => 'Valeur du champ',
   'edit' => 'Éditer',
-  'view_as_recipient' => 'Voir en tant que destinataire',    
-
-  // product management
+  'view_as_recipient' => 'Voir en tant que destinataire',
   'product_library' => 'Inventaire',
   'product' => 'Produit',
   'products' => 'Produits',
@@ -336,18 +299,14 @@ return array(
   'created_product' => 'Produit créé',
   'archived_product' => 'Produit archivé',
   'pro_plan_custom_fields' => ':link pour activer les champs personnalisés en rejoingant le Plan Pro',
-
   'advanced_settings' => 'Paramètres avancés',
   'pro_plan_advanced_settings' => ':link pour activer les paramètres avancés en rejoingant le Plan Pro',
   'invoice_design' => 'Modèle de facture',
   'specify_colors' => 'Spécifiez les couleurs',
   'specify_colors_label' => 'Sélectionnez les couleurs utilisés dans les factures',
-
   'chart_builder' => 'Concepteur de graphiques',
   'ninja_email_footer' => 'Utilisez :site pour facturer vos clients et être payés en ligne gratuitement!',
   'go_pro' => 'Passez au Plan Pro',
-
-  // Quotes
   'quote' => 'Devis',
   'quotes' => 'Devis',
   'quote_number' => 'Devis numéro',
@@ -357,7 +316,6 @@ return array(
   'your_quote' => 'Votre devis',
   'total' => 'Total',
   'clone' => 'Dupliquer',
-
   'new_quote' => 'Nouveau devis',
   'create_quote' => 'Créer un devis',
   'edit_quote' => 'Éditer le devis',
@@ -370,7 +328,6 @@ return array(
   'view_invoice' => 'Nouvelle facture',
   'view_quote' => 'Voir le devis',
   'view_client' => 'Voir le client',
-
   'updated_quote' => 'Devis mis à jour',
   'created_quote' => 'Devis créé',
   'cloned_quote' => 'Devis dupliqué avec succès',
@@ -380,24 +337,20 @@ return array(
   'deleted_quote' => 'Devis supprimé',
   'deleted_quotes' => ':count devis ont bien été supprimés',
   'converted_to_invoice' => 'Le devis a bien été converti en facture',
-
   'quote_subject' => 'Nouveau devis de :account',
   'quote_message' => 'Pour visionner votre devis de :amount, cliquez sur le lien ci-dessous.',
   'quote_link_message' => 'Pour visionner votre soumission, cliquez sur le lien ci-dessous:',
   'notification_quote_sent_subject' => 'Le devis :invoice a été envoyé à :client',
   'notification_quote_viewed_subject' => 'Le devis :invoice a été visionné par :client',
   'notification_quote_sent' => 'Le devis :invoice de :amount a été envoyé au client :client.',
-  'notification_quote_viewed' => 'Le devis :invoice de :amount a été visioné par le client :client.',  
-
+  'notification_quote_viewed' => 'Le devis :invoice de :amount a été visioné par le client :client.',
   'session_expired' => 'Votre session a expiré.',
-
   'invoice_fields' => 'Champs de facture',
   'invoice_options' => 'Options de facturation',
   'hide_quantity' => 'Masquer la quantité',
   'hide_quantity_help' => 'Si la quantité de vos produits sont toujours 1, vous pouvez alors masquer la colonne "Quantité".',
   'hide_paid_to_date' => 'Masquer "Payé à ce jour"',
   'hide_paid_to_date_help' => 'Afficher seulement la ligne "Payé à ce jour"sur les factures pour lesquelles il y a au moins un paiement.',
-
   'charge_taxes' => 'Taxe supplémentaire',
   'user_management' => 'Gestion des utilisateurs',
   'add_user' => 'Ajouter utilisateur',
@@ -412,22 +365,17 @@ return array(
   'active' => 'Actif',
   'pending' => 'En attente',
   'deleted_user' => 'Utilisateur supprimé',
-  'limit_users' => 'Désolé, ceci excédera la limite de ' . MAX_NUM_USERS . ' utilisateurs',
-
+  'limit_users' => 'Désolé, ceci excédera la limite de 20 utilisateurs',
   'confirm_email_invoice' => 'Voulez-vous vraiment envoyer cette facture par courriel ?',
   'confirm_email_quote' => 'Voulez-vous vraiment envoyer ce devis par courriel ?',
   'confirm_recurring_email_invoice' => 'Les factures récurrentes sont activées, voulez-vous vraiment envoyer cette facture par courriel ?',
-
   'cancel_account' => 'Supprimer le compte',
   'cancel_account_message' => 'Attention: Ceci supprimera de façon permanente toutes vos données; cette action est irréversible.',
   'go_back' => 'Retour',
-
   'data_visualizations' => 'Visualisation des données',
   'sample_data' => 'Données fictives présentées',
   'hide' => 'Cacher',
   'new_version_available' => 'Une nouvelle version de :releases_link est disponible. Vous utilisez v:user_version, la plus récente est v:latest_version',
-    
-
   'invoice_settings' => 'Paramètres des factures',
   'invoice_number_prefix' => 'Préfixe du numéro de facture',
   'invoice_number_counter' => 'Compteur du numéro de facture',
@@ -436,62 +384,52 @@ return array(
   'share_invoice_counter' => 'Partager le compteur de facture',
   'invoice_issued_to' => 'Facture destinée à',
   'invalid_counter' => 'Pour éviter un éventuel conflit, merci de définir un préfixe pour le numéro de facture ou pour le numéro de devis',
-  'mark_sent' => 'Marquer comme envoyé',    
-
+  'mark_sent' => 'Marquer comme envoyé',
   'gateway_help_1' => ':link to sign up for Authorize.net.',
   'gateway_help_2' => ':link to sign up for Authorize.net.',
   'gateway_help_17' => ':link to get your PayPal API signature.',
   'gateway_help_23' => 'Note: use your secret API key, not your publishable API key.',
   'gateway_help_27' => ':link to sign up for TwoCheckout.',
-
   'more_designs' => 'Plus de modèles',
   'more_designs_title' => 'Modèles de factures additionnels',
   'more_designs_cloud_header' => 'Passez au Plan Pro pour plus de modèles',
   'more_designs_cloud_text' => '',
-  'more_designs_self_host_header' => 'Obtenez 6 modèles de factures additionnels pour seulement '.INVOICE_DESIGNS_PRICE.'$',
+  'more_designs_self_host_header' => 'Obtenez 6 modèles de factures additionnels pour seulement 10$',
   'more_designs_self_host_text' => '',
   'buy' => 'Acheter',
   'bought_designs' => 'Les nouveaux modèles ont été ajoutés avec succès',
-  
   'sent' => 'envoyé',
   'timesheets' => 'Feuilles de temps',
-
   'payment_title' => 'Enter Your Billing Address and Credit Card information',
   'payment_cvv' => '*This is the 3-4 digit number onthe back of your card',
   'payment_footer1' => '*Billing address must match address associated with credit card.',
   'payment_footer2' => '*Please click "PAY NOW" only once - transaction may take up to 1 minute to process.',
-  'vat_number' => 'Numéro de TVA',    
-
+  'vat_number' => 'Numéro de TVA',
   'id_number' => 'Numéro ID',
   'white_label_link' => 'Marque blanche',
-  'white_label_text' => 'Pour retirer la marque Invoice Ninja en haut de la page client, achetez un licence en marque blanche de '.WHITE_LABEL_PRICE.'$.',
+  'white_label_text' => 'Pour retirer la marque Invoice Ninja en haut de la page client, achetez un licence en marque blanche de 20$.',
   'white_label_header' => 'Entête de marque blanche',
   'bought_white_label' => 'License de marque blanche activée',
   'white_labeled' => 'White labeled',
-
   'restore' => 'Restaurer',
   'restore_invoice' => 'Restaurer la facture',
   'restore_quote' => 'Restaurer le devis',
   'restore_client' => 'Restaurer le client',
   'restore_credit' => 'Restaurer le crédit',
   'restore_payment' => 'Restaurer le paiement',
-
   'restored_invoice' => 'Facture restaurée avec succès',
   'restored_quote' => 'Devis restauré avec succès',
   'restored_client' => 'Client restauré avec succès',
   'restored_payment' => 'Paiement restauré avec succès',
   'restored_credit' => 'Crédit restauré avec succès',
-
   'reason_for_canceling' => 'Aidez nous à améliorer notre site en nous disant pourquoi vous partez.',
   'discount_percent' => 'Pourcent',
   'discount_amount' => 'Montant',
-  
   'invoice_history' => 'Historique des factures',
   'quote_history' => 'Historique des devis',
   'current_version' => 'Version courante',
   'select_versiony' => 'Choix de la verison',
   'view_history' => 'Consulter l\'historique',
-
   'edit_payment' => 'Éditer le paiement',
   'updated_payment' => 'Mise-à-jour réussie du paiement',
   'deleted' => 'Supprimé',
@@ -503,8 +441,7 @@ return array(
   'payment_email' => 'Courriel de paiement',
   'quote_email' => 'Courriel de devis',
   'reset_all' => 'Tout remettre à zéro',
-  'approve' => 'Approuver',  
-
+  'approve' => 'Approuver',
   'token_billing_type_id' => 'Token Billing',
   'token_billing_help' => 'Enables you to store credit cards with your gateway, and charge them at a later date.',
   'token_billing_1' => 'Disabled',
@@ -517,7 +454,6 @@ return array(
   'edit_payment_details' => 'Edit payment details',
   'token_billing' => 'Save card details',
   'token_billing_secure' => 'The data is stored securely by :stripe_link',
-
   'support' => 'Support',
   'contact_information' => 'Contact information',
   '256_encryption' => '256-Bit Encryption',
@@ -527,11 +463,9 @@ return array(
   'order_overview' => 'Order overview',
   'match_address' => '*Address must match address associated with credit card.',
   'click_once' => '*Please click "PAY NOW" only once - transaction may take up to 1 minute to process.',
-  
   'default_invoice_footer' => 'Set default invoice footer',
   'invoice_footer' => 'Invoice footer',
   'save_as_default_footer' => 'Save as default footer',
-
   'token_management' => 'Token Management',
   'tokens' => 'Tokens',
   'add_token' => 'Add Token',
@@ -542,7 +476,6 @@ return array(
   'edit_token' => 'Edit Token',
   'delete_token' => 'Delete Token',
   'token' => 'Token',
-
   'add_gateway' => 'Add Gateway',
   'delete_gateway' => 'Delete Gateway',
   'edit_gateway' => 'Edit Gateway',
@@ -551,7 +484,6 @@ return array(
   'deleted_gateway' => 'Successfully deleted gateway',
   'pay_with_paypal' => 'PayPal',
   'pay_with_card' => 'Credit card',
-
   'change_password' => 'Change password',
   'current_password' => 'Current password',
   'new_password' => 'New password',
@@ -559,7 +491,6 @@ return array(
   'password_error_incorrect' => 'The current password is incorrect.',
   'password_error_invalid' => 'The new password is invalid.',
   'updated_password' => 'Successfully updated password',
-
   'api_tokens' => 'API Tokens',
   'users_and_tokens' => 'Users & Tokens',
   'account_login' => 'Account Login',
@@ -571,13 +502,11 @@ return array(
   'send_email' => 'Send email',
   'set_password' => 'Set Password',
   'converted' => 'Converted',
-    
   'email_approved' => 'Email me when a quote is <b>approved</b>',
   'notification_quote_approved_subject' => 'Quote :invoice was approved by :client',
   'notification_quote_approved' => 'The following client :client approved Quote :invoice for :amount.',
   'resend_confirmation' => 'Resend confirmation email',
   'confirmation_resent' => 'The confirmation email was resent',
-  
   'gateway_help_42' => ':link to sign up for BitPay.<br/>Note: use a Legacy API Key, not an API token.',
   'payment_type_credit_card' => 'Credit card',
   'payment_type_paypal' => 'PayPal',
@@ -585,7 +514,6 @@ return array(
   'knowledge_base' => 'Knowledge Base',
   'partial' => 'Partial',
   'partial_remaining' => ':partial of :balance',
-
   'more_fields' => 'More Fields',
   'less_fields' => 'Less Fields',
   'client_name' => 'Client Name',
@@ -597,7 +525,6 @@ return array(
   'view_documentation' => 'View Documentation',
   'app_title' => 'Free Open-Source Online Invoicing',
   'app_description' => 'Invoice Ninja is a free, open-source solution for invoicing and billing customers. With Invoice Ninja, you can easily build and send beautiful invoices from any device that has access to the web. Your clients can print your invoices, download them as pdf files, and even pay you online from within the system.',
-  
   'rows' => 'rows',
   'www' => 'www',
   'logo' => 'Logo',
@@ -617,7 +544,6 @@ return array(
   'zapier' => 'Zapier <sup>Beta</sup>',
   'recurring' => 'Recurring',
   'last_invoice_sent' => 'Last invoice sent :date',
-
   'processed_updates' => 'Successfully completed update',
   'tasks' => 'Tasks',
   'new_task' => 'New Task',
@@ -663,13 +589,10 @@ return array(
   'invoice_labels' => 'Invoice Labels',
   'prefix' => 'Prefix',
   'counter' => 'Counter',
-
   'payment_type_dwolla' => 'Dwolla',
   'gateway_help_43' => ':link to sign up for Dwolla.',
   'partial_value' => 'Must be greater than zero and less than the total',
   'more_actions' => 'More Actions',
-
-
   'pro_plan_title' => 'NINJA PRO',
   'pro_plan_call_to_action' => 'Upgrade Now!',
   'pro_plan_feature1' => 'Create Unlimited Clients',
@@ -680,14 +603,12 @@ return array(
   'pro_plan_feature6' => 'Create Quotes & Pro-forma Invoices',
   'pro_plan_feature7' => 'Customize Invoice Field Titles & Numbering',
   'pro_plan_feature8' => 'Option to Attach PDFs to Client Emails',
-
   'resume' => 'Resume',
   'break_duration' => 'Break',
   'edit_details' => 'Edit Details',
   'work' => 'Work',
   'timezone_unset' => 'Please :link to set your timezone',
   'click_here' => 'click here',
-
   'email_receipt' => 'Email payment receipt to the client',
   'created_payment_emailed_client' => 'Successfully created payment and emailed client',
   'add_account' => 'Add Account',
@@ -697,6 +618,4 @@ return array(
   'unlinked_account' => 'Successfully unlinked accounts',
   'login' => 'Login',
   'or' => 'or',
-
-
 );

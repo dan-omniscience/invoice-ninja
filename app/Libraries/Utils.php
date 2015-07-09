@@ -352,7 +352,7 @@ class Utils
 
         $timezone = Session::get(SESSION_TIMEZONE, DEFAULT_TIMEZONE);
         $format = Session::get(SESSION_DATETIME_FORMAT, DEFAULT_DATETIME_FORMAT);
-        
+
         $dateTime = DateTime::createFromFormat('Y-m-d H:i:s', $date);
         $dateTime->setTimeZone(new DateTimeZone($timezone));
 
@@ -569,7 +569,7 @@ class Utils
         $curl = curl_init();
 
         $jsonEncodedData = json_encode($data->toPublicArray());
-        
+
         $opts = [
             CURLOPT_URL => $subscription->target_url,
             CURLOPT_RETURNTRANSFER => true,
@@ -595,7 +595,7 @@ class Utils
     public static function remapPublicIds($items)
     {
         $return = [];
-        
+
         foreach ($items as $item) {
             $return[] = $item->toPublicArray();
         }
@@ -621,7 +621,7 @@ class Utils
         if ($publicId) {
             $data['id'] = $publicId;
         }
-        
+
         return $data;
     }
 

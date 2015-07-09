@@ -1,107 +1,98 @@
-<?php 
+<?php
 
-return array(
-
- // client
- 'organization' => 'Įmonė',
- 'name' => 'Vardas',
- 'website' => 'Internetinis puslapis',
- 'work_phone' => 'Telefonas',
- 'address' => 'Adresas',
- 'address1' => 'Gatvė',
- 'address2' => 'Kabinetas',
- 'city' => 'Miestas',
- 'state' => 'Valstija',
- 'postal_code' => 'Pašto kodas',
- 'country_id' => 'Šalis',
- 'contacts' => 'Kontaktinė infromacija',
- 'first_name' => 'Vardas',
- 'last_name' => 'Pavardė',
- 'phone' => 'Telefonas',
- 'email' => 'El. paštas',
- 'additional_info' => 'Papidoma Info',
- 'payment_terms' => 'Apmokėjimo sąlygos',
- 'currency_id' => 'Valiuta',
- 'size_id' => 'Dydis',
- 'industry_id' => 'Veiklos sritis',
- 'private_notes' => 'Privatūs užrašai',
-
- // invoice
- 'invoice' => 'Sąkaita faktūra',
- 'client' => 'Klientas',
- 'invoice_date' => 'Išrašymo data',
- 'due_date' => 'Apmokėjimo Data',
- 'invoice_number' => 'Serija ir Nr.',
- 'invoice_number_short' => 'Nr.',
- 'po_number' => 'PO Numeris',
- 'po_number_short' => 'PO Nr.',
- 'frequency_id' => 'Kaip dažnai',
- 'discount' => 'Nuolaida',
- 'taxes' => 'Mokesčiai',
- 'tax' => 'PVM',
- 'item' => 'Prekė',
- 'description' => 'Aprašymas',
- 'unit_cost' => 'Vnt. kaina',
- 'quantity' => 'Kiekis',
- 'line_total' => 'Suma',
- 'subtotal' => 'Suma viso',
- 'paid_to_date' => 'Apmokėta',
- 'balance_due' => 'Apmokėti',
- 'invoice_design_id' => 'Dizainas',
- 'terms' => 'Sąlygos',
- 'your_invoice' => 'Tavo sąskaitos',
-
- 'remove_contact' => 'Pašalinti kontaktą',
- 'add_contact' => 'Pridėti kontaktą',
- 'create_new_client' => 'Sukurti naują klientą',
- 'edit_client_details' => 'Redaguoti kliento informaciją',
- 'enable' => 'Įgalinti',
- 'learn_more' => 'Plačiau',
- 'manage_rates' => 'Redaguoti įkainius',
- 'note_to_client' => 'Pastaba klientui',
- 'invoice_terms' => 'Sąskaitos sąlygos',
- 'save_as_default_terms' => 'Išsaugoti sąlygas kaip standratrines',
- 'download_pdf' => 'Atsisiųsti PDF',
- 'pay_now' => 'Apmokėti dabar',
- 'save_invoice' => 'Išsaugoti sąskaitą',
- 'clone_invoice' => 'Kopijuoti sąskaitą',
- 'archive_invoice' => 'Archyvuoti sąskaitą',
- 'delete_invoice' => 'Ištrinti sąskaitą',
- 'email_invoice' => 'Išsiųsti el. paštu sąskaitą',
- 'enter_payment' => 'Įvesti apmokėjimą',
- 'tax_rates' => 'Mokesčių įkainiai',
- 'rate' => 'Įkainis',
- 'settings' => 'Nustatymai',
- 'enable_invoice_tax' => 'Įjungti <b>PVM mokesčius</b>',
- 'enable_line_item_tax' => 'Įjungti <b>PVM mokesčius sumai</b>',
-
- // navigation
- 'dashboard' => 'Darbastalis',
- 'clients' => 'Klientai',
- 'invoices' => 'Sąskaitos',
- 'payments' => 'Mokėjimai',
- 'credits' => 'Kreditai',
- 'history' => 'Istorija',
- 'search' => 'Paieška',
- 'sign_up' => 'Prisijunk',
- 'guest' => 'Svečias',
- 'company_details' => 'Imonės informacija',
- 'online_payments' => 'Online mokėjimai',
- 'notifications' => 'Priminimai',
- 'import_export' => 'Importas/Eksportas',
- 'done' => 'Baigta',
- 'save' => 'Saugoti',
- 'create' => 'Kurti',
- 'upload' => 'Įkelti',
- 'import' => 'Importuoti',
- 'download' => 'Atsiųsti',
- 'cancel' => 'Atšaukti',
- 'close' => 'Uždaryti',
- 'provide_email' => 'Prašome pateikti galiojantį el. pašto adresą',
- 'powered_by' => 'Energija teikia',
- 'no_items' => 'Įrašų nėra',
-
-  // recurring invoices
+return array (
+  'organization' => 'Įmonė',
+  'name' => 'Vardas',
+  'website' => 'Internetinis puslapis',
+  'work_phone' => 'Telefonas',
+  'address' => 'Adresas',
+  'address1' => 'Gatvė',
+  'address2' => 'Kabinetas',
+  'city' => 'Miestas',
+  'state' => 'Valstija',
+  'postal_code' => 'Pašto kodas',
+  'country_id' => 'Šalis',
+  'contacts' => 'Kontaktinė infromacija',
+  'first_name' => 'Vardas',
+  'last_name' => 'Pavardė',
+  'phone' => 'Telefonas',
+  'email' => 'El. paštas',
+  'additional_info' => 'Papidoma Info',
+  'payment_terms' => 'Apmokėjimo sąlygos',
+  'currency_id' => 'Valiuta',
+  'size_id' => 'Dydis',
+  'industry_id' => 'Veiklos sritis',
+  'private_notes' => 'Privatūs užrašai',
+  'invoice' => 'Sąkaita faktūra',
+  'client' => 'Klientas',
+  'invoice_date' => 'Išrašymo data',
+  'due_date' => 'Apmokėjimo Data',
+  'invoice_number' => 'Serija ir Nr.',
+  'invoice_number_short' => 'Nr.',
+  'po_number' => 'PO Numeris',
+  'po_number_short' => 'PO Nr.',
+  'frequency_id' => 'Kaip dažnai',
+  'discount' => 'Nuolaida',
+  'taxes' => 'Mokesčiai',
+  'tax' => 'PVM',
+  'item' => 'Prekė',
+  'description' => 'Aprašymas',
+  'unit_cost' => 'Vnt. kaina',
+  'quantity' => 'Kiekis',
+  'line_total' => 'Suma',
+  'subtotal' => 'Suma viso',
+  'paid_to_date' => 'Apmokėta',
+  'balance_due' => 'Apmokėti',
+  'invoice_design_id' => 'Dizainas',
+  'terms' => 'Sąlygos',
+  'your_invoice' => 'Tavo sąskaitos',
+  'remove_contact' => 'Pašalinti kontaktą',
+  'add_contact' => 'Pridėti kontaktą',
+  'create_new_client' => 'Sukurti naują klientą',
+  'edit_client_details' => 'Redaguoti kliento informaciją',
+  'enable' => 'Įgalinti',
+  'learn_more' => 'Plačiau',
+  'manage_rates' => 'Redaguoti įkainius',
+  'note_to_client' => 'Pastaba klientui',
+  'invoice_terms' => 'Sąskaitos sąlygos',
+  'save_as_default_terms' => 'Išsaugoti sąlygas kaip standratrines',
+  'download_pdf' => 'Atsisiųsti PDF',
+  'pay_now' => 'Apmokėti dabar',
+  'save_invoice' => 'Išsaugoti sąskaitą',
+  'clone_invoice' => 'Kopijuoti sąskaitą',
+  'archive_invoice' => 'Archyvuoti sąskaitą',
+  'delete_invoice' => 'Ištrinti sąskaitą',
+  'email_invoice' => 'Išsiųsti el. paštu sąskaitą',
+  'enter_payment' => 'Įvesti apmokėjimą',
+  'tax_rates' => 'Mokesčių įkainiai',
+  'rate' => 'Įkainis',
+  'settings' => 'Nustatymai',
+  'enable_invoice_tax' => 'Įjungti <b>PVM mokesčius</b>',
+  'enable_line_item_tax' => 'Įjungti <b>PVM mokesčius sumai</b>',
+  'dashboard' => 'Darbastalis',
+  'clients' => 'Klientai',
+  'invoices' => 'Sąskaitos',
+  'payments' => 'Mokėjimai',
+  'credits' => 'Kreditai',
+  'history' => 'Istorija',
+  'search' => 'Paieška',
+  'sign_up' => 'Prisijunk',
+  'guest' => 'Svečias',
+  'company_details' => 'Imonės informacija',
+  'online_payments' => 'Online mokėjimai',
+  'notifications' => 'Priminimai',
+  'import_export' => 'Importas/Eksportas',
+  'done' => 'Baigta',
+  'save' => 'Saugoti',
+  'create' => 'Kurti',
+  'upload' => 'Įkelti',
+  'import' => 'Importuoti',
+  'download' => 'Atsiųsti',
+  'cancel' => 'Atšaukti',
+  'close' => 'Uždaryti',
+  'provide_email' => 'Prašome pateikti galiojantį el. pašto adresą',
+  'powered_by' => 'Energija teikia',
+  'no_items' => 'Įrašų nėra',
   'recurring_invoices' => 'Recurring Invoices',
   'recurring_help' => '<p>Automatically send clients the same invoices weekly, bi-monthly, monthly, quarterly or annually. </p>
         <p>Use :MONTH, :QUARTER or :YEAR for dynamic dates. Basic math works as well, for example :MONTH-1.</p>
@@ -111,18 +102,14 @@ return array(
           <li>":YEAR+1 yearly subscription" => "2015 Yearly Subscription"</li>
           <li>"Retainer payment for :QUARTER+1" => "Retainer payment for Q2"</li>
         </ul>',
-
-  // dashboard
   'in_total_revenue' => 'in total revenue',
   'billed_client' => 'billed client',
   'billed_clients' => 'billed clients',
   'active_client' => 'active client',
-  'active_clients' => 'active clients',  
+  'active_clients' => 'active clients',
   'invoices_past_due' => 'Invoices Past Due',
   'upcoming_invoices' => 'Upcoming invoices',
   'average_invoice' => 'Average invoice',
-  
-  // list pages
   'archive' => 'Archive',
   'delete' => 'Delete',
   'archive_client' => 'Archive client',
@@ -158,8 +145,6 @@ return array(
   'select' => 'Select',
   'edit_client' => 'Edit Client',
   'edit_invoice' => 'Edit Invoice',
-
-  // client view page
   'create_invoice' => 'Create Invoice',
   'enter_credit' => 'Enter Credit',
   'last_logged_in' => 'Last logged in',
@@ -171,12 +156,8 @@ return array(
   'message' => 'Message',
   'adjustment' => 'Adjustment',
   'are_you_sure' => 'Are you sure?',
-
-  // payment pages
   'payment_type_id' => 'Payment type',
   'amount' => 'Amount',
-
-  // account/company pages
   'work_email' => 'Email',
   'language_id' => 'Language',
   'timezone_id' => 'Timezone',
@@ -208,8 +189,6 @@ return array(
   'clients_will_create' => 'clients will be created',
   'email_settings' => 'Email Settings',
   'pdf_email_attachment' => 'Attach PDF to Emails',
-
-  // application messages
   'created_client' => 'Successfully created client',
   'created_clients' => 'Successfully created :count clients',
   'updated_settings' => 'Successfully updated settings',
@@ -220,14 +199,11 @@ return array(
   'payment_error' => 'There was an error processing your payment. Please try again later.',
   'registration_required' => 'Please sign up to email an invoice',
   'confirmation_required' => 'Please confirm your email address',
-
   'updated_client' => 'Successfully updated client',
-  'created_client' => 'Successfully created client',
   'archived_client' => 'Successfully archived client',
   'archived_clients' => 'Successfully archived :count clients',
   'deleted_client' => 'Successfully deleted client',
   'deleted_clients' => 'Successfully deleted :count clients',
-
   'updated_invoice' => 'Successfully updated invoice',
   'created_invoice' => 'Successfully created invoice',
   'cloned_invoice' => 'Successfully cloned invoice',
@@ -237,21 +213,17 @@ return array(
   'archived_invoices' => 'Successfully archived :count invoices',
   'deleted_invoice' => 'Successfully deleted invoice',
   'deleted_invoices' => 'Successfully deleted :count invoices',
-
   'created_payment' => 'Successfully created payment',
   'archived_payment' => 'Successfully archived payment',
   'archived_payments' => 'Successfully archived :count payments',
   'deleted_payment' => 'Successfully deleted payment',
   'deleted_payments' => 'Successfully deleted :count payments',
   'applied_payment' => 'Successfully applied payment',
-
   'created_credit' => 'Successfully created credit',
   'archived_credit' => 'Successfully archived credit',
   'archived_credits' => 'Successfully archived :count credits',
   'deleted_credit' => 'Successfully deleted credit',
   'deleted_credits' => 'Successfully deleted :count credits',
-
-  // Emails
   'confirmation_subject' => 'Invoice Ninja Account Confirmation',
   'confirmation_header' => 'Account Confirmation',
   'confirmation_message' => 'Please access the link below to confirm your account.',
@@ -262,27 +234,23 @@ return array(
   'email_salutation' => 'Dear :name,',
   'email_signature' => 'Regards,',
   'email_from' => 'The Invoice Ninja Team',
-  'user_email_footer' => 'To adjust your email notification settings please visit '.SITE_URL.'/company/notifications',
+  'user_email_footer' => 'To adjust your email notification settings please visit https://ninja.local/company/notifications',
   'invoice_link_message' => 'To view your client invoice click the link below:',
   'notification_invoice_paid_subject' => 'Invoice :invoice was paid by :client',
   'notification_invoice_sent_subject' => 'Invoice :invoice was sent to :client',
   'notification_invoice_viewed_subject' => 'Invoice :invoice was viewed by :client',
   'notification_invoice_paid' => 'A payment of :amount was made by client :client towards Invoice :invoice.',
   'notification_invoice_sent' => 'The following client :client was emailed Invoice :invoice for :amount.',
-  'notification_invoice_viewed' => 'The following client :client viewed Invoice :invoice for :amount.',  
+  'notification_invoice_viewed' => 'The following client :client viewed Invoice :invoice for :amount.',
   'reset_password' => 'You can reset your account password by clicking the following link:',
-  'reset_password_footer' => 'If you did not request this password reset please email our support: ' . CONTACT_EMAIL,
-
-
-  // Payment page
+  'reset_password_footer' => 'If you did not request this password reset please email our support: dan@omniscience.co.il',
   'secure_payment' => 'Secure Payment',
   'card_number' => 'Card number',
-  'expiration_month' => 'Expiration month',  
+  'expiration_month' => 'Expiration month',
   'expiration_year' => 'Expiration year',
   'cvv' => 'CVV',
-  
-  // Security alerts
-  'security' => [
+  'security' => 
+  array (
     'too_many_attempts' => 'Too many attempts. Try again in few minutes.',
     'wrong_credentials' => 'Incorrect email or password.',
     'confirmation' => 'Your account has been confirmed!',
@@ -290,17 +258,15 @@ return array(
     'password_forgot' => 'The information regarding password reset was sent to your email.',
     'password_reset' => 'Your password has been changed successfully.',
     'wrong_password_reset' => 'Invalid password. Try again',
-  ],
-  
-  // Pro Plan
-  'pro_plan' => [
+  ),
+  'pro_plan' => 
+  array (
     'remove_logo' => ':link to remove the Invoice Ninja logo by joining the Pro Plan',
     'remove_logo_link' => 'Click here',
-  ],
-
+  ),
   'logout' => 'Log Out',
   'sign_up_to_save' => 'Sign up to save your work',
-  'agree_to_terms' =>'I agree to the Invoice Ninja :terms',
+  'agree_to_terms' => 'I agree to the Invoice Ninja :terms',
   'terms_of_service' => 'Terms of Service',
   'email_taken' => 'The email address is already registered',
   'working' => 'Working',
@@ -308,7 +274,6 @@ return array(
   'success_message' => 'You have succesfully registered. Please visit the link in the account confirmation email to verify your email address.',
   'erase_data' => 'This will permanently erase your data.',
   'password' => 'Password',
-
   'pro_plan_product' => 'Pro Plan',
   'pro_plan_description' => 'One year enrollment in the Invoice Ninja Pro Plan.',
   'pro_plan_success' => 'Thanks for choosing Invoice Ninja\'s Pro plan!<p/>&nbsp;<br/>
@@ -318,7 +283,6 @@ return array(
                           for a year of Pro-level invoicing.<p/>
                           Can\'t find the invoice? Need further assistance? We\'re happy to help 
                           -- email us at contact@invoiceninja.com',
-
   'unsaved_changes' => 'You have unsaved changes',
   'custom_fields' => 'Custom fields',
   'company_fields' => 'Company Fields',
@@ -328,8 +292,6 @@ return array(
   'edit' => 'Edit',
   'set_name' => 'Set your company name',
   'view_as_recipient' => 'View as recipient',
-
-  // product management
   'product_library' => 'Product Library',
   'product' => 'Product',
   'products' => 'Products',
@@ -342,20 +304,16 @@ return array(
   'archive_product' => 'Archive Product',
   'updated_product' => 'Successfully updated product',
   'created_product' => 'Successfully created product',
-  'archived_product' => 'Successfully archived product',  
+  'archived_product' => 'Successfully archived product',
   'pro_plan_custom_fields' => ':link to enable custom fields by joining the Pro Plan',
-
   'advanced_settings' => 'Advanced Settings',
   'pro_plan_advanced_settings' => ':link to enable the advanced settings by joining the Pro Plan',
   'invoice_design' => 'Invoice Design',
   'specify_colors' => 'Specify colors',
   'specify_colors_label' => 'Select the colors used in the invoice',
-
   'chart_builder' => 'Chart Builder',
   'ninja_email_footer' => 'Use :site to invoice your clients and get paid online for free!',
   'go_pro' => 'Go Pro',
-
-  // Quotes
   'quote' => 'Quote',
   'quotes' => 'Quotes',
   'quote_number' => 'Quote Number',
@@ -365,7 +323,6 @@ return array(
   'your_quote' => 'Your Quote',
   'total' => 'Total',
   'clone' => 'Clone',
-
   'new_quote' => 'New Quote',
   'create_quote' => 'Create Quote',
   'edit_quote' => 'Edit Quote',
@@ -378,7 +335,6 @@ return array(
   'view_invoice' => 'View Invoice',
   'view_client' => 'View Client',
   'view_quote' => 'View Quote',
-
   'updated_quote' => 'Successfully updated quote',
   'created_quote' => 'Successfully created quote',
   'cloned_quote' => 'Successfully cloned quote',
@@ -388,24 +344,20 @@ return array(
   'deleted_quote' => 'Successfully deleted quote',
   'deleted_quotes' => 'Successfully deleted :count quotes',
   'converted_to_invoice' => 'Successfully converted quote to invoice',
-
   'quote_subject' => 'New quote from :account',
   'quote_message' => 'To view your quote for :amount, click the link below.',
   'quote_link_message' => 'To view your client quote click the link below:',
   'notification_quote_sent_subject' => 'Quote :invoice was sent to :client',
   'notification_quote_viewed_subject' => 'Quote :invoice was viewed by :client',
   'notification_quote_sent' => 'The following client :client was emailed Quote :invoice for :amount.',
-  'notification_quote_viewed' => 'The following client :client viewed Quote :invoice for :amount.',  
-  
+  'notification_quote_viewed' => 'The following client :client viewed Quote :invoice for :amount.',
   'session_expired' => 'Your session has expired.',
-
   'invoice_fields' => 'Invoice Fields',
   'invoice_options' => 'Invoice Options',
   'hide_quantity' => 'Hide quantity',
   'hide_quantity_help' => 'If your line items quantities are always 1, then you can declutter invoices by no longer displaying this field.',
   'hide_paid_to_date' => 'Hide paid to date',
   'hide_paid_to_date_help' => 'Only display the "Paid to Date" area on your invoices once a payment has been received.',
-
   'charge_taxes' => 'Charge taxes',
   'user_management' => 'User Management',
   'add_user' => 'Add User',
@@ -420,21 +372,17 @@ return array(
   'active' => 'Active',
   'pending' => 'Pending',
   'deleted_user' => 'Successfully deleted user',
-  'limit_users' => 'Sorry, this will exceed the limit of ' . MAX_NUM_USERS . ' users',
-
+  'limit_users' => 'Sorry, this will exceed the limit of 20 users',
   'confirm_email_invoice' => 'Are you sure you want to email this invoice?',
   'confirm_email_quote' => 'Are you sure you want to email this quote?',
   'confirm_recurring_email_invoice' => 'Recurring is enabled, are you sure you want this invoice emailed?',
-
   'cancel_account' => 'Cancel Account',
   'cancel_account_message' => 'Warning: This will permanently erase all of your data, there is no undo.',
   'go_back' => 'Go Back',
-
   'data_visualizations' => 'Data Visualizations',
   'sample_data' => 'Sample data shown',
   'hide' => 'Hide',
   'new_version_available' => 'A new version of :releases_link is available. You\'re running v:user_version, the latest is v:latest_version',
-    
   'invoice_settings' => 'Invoice Settings',
   'invoice_number_prefix' => 'Invoice Number Prefix',
   'invoice_number_counter' => 'Invoice Number Counter',
@@ -443,65 +391,52 @@ return array(
   'share_invoice_counter' => 'Share invoice counter',
   'invoice_issued_to' => 'Invoice issued to',
   'invalid_counter' => 'To prevent a possible conflict please set either an invoice or quote number prefix',
-  'mark_sent' => 'Mark sent',    
-  
-
+  'mark_sent' => 'Mark sent',
   'gateway_help_1' => ':link to sign up for Authorize.net.',
   'gateway_help_2' => ':link to sign up for Authorize.net.',
   'gateway_help_17' => ':link to get your PayPal API signature.',
   'gateway_help_23' => 'Note: use your secret API key, not your publishable API key.',
   'gateway_help_27' => ':link to sign up for TwoCheckout.',
-
   'more_designs' => 'More designs',
   'more_designs_title' => 'Additional Invoice Designs',
   'more_designs_cloud_header' => 'Go Pro for more invoice designs',
   'more_designs_cloud_text' => '',
-  'more_designs_self_host_header' => 'Get 6 more invoice designs for just $'.INVOICE_DESIGNS_PRICE,
+  'more_designs_self_host_header' => 'Get 6 more invoice designs for just $10',
   'more_designs_self_host_text' => '',
   'buy' => 'Buy',
   'bought_designs' => 'Successfully added additional invoice designs',
-  
-
-  
   'sent' => 'sent',
   'timesheets' => 'Timesheets',
-
   'payment_title' => 'Enter Your Billing Address and Credit Card information',
   'payment_cvv' => '*This is the 3-4 digit number onthe back of your card',
   'payment_footer1' => '*Billing address must match address associated with credit card.',
   'payment_footer2' => '*Please click "PAY NOW" only once - transaction may take up to 1 minute to process.',
   'vat_number' => 'Vat Number',
   'id_number' => 'ID Number',
-
   'white_label_link' => 'White label',
-  'white_label_text' => 'Purchase a white label license for $'.WHITE_LABEL_PRICE.' to remove the Invoice Ninja branding from the top of the client pages.',
+  'white_label_text' => 'Purchase a white label license for $20 to remove the Invoice Ninja branding from the top of the client pages.',
   'white_label_header' => 'White Label',
   'bought_white_label' => 'Successfully enabled white label license',
   'white_labeled' => 'White labeled',
-
   'restore' => 'Restore',
   'restore_invoice' => 'Restore Invoice',
   'restore_quote' => 'Restore Quote',
   'restore_client' => 'Restore Client',
   'restore_credit' => 'Restore Credit',
   'restore_payment' => 'Restore Payment',
-
   'restored_invoice' => 'Successfully restored invoice',
   'restored_quote' => 'Successfully restored quote',
   'restored_client' => 'Successfully restored client',
   'restored_payment' => 'Successfully restored payment',
   'restored_credit' => 'Successfully restored credit',
-  
   'reason_for_canceling' => 'Help us improve our site by telling us why you\'re leaving.',
   'discount_percent' => 'Percent',
   'discount_amount' => 'Amount',
-
   'invoice_history' => 'Invoice History',
   'quote_history' => 'Quote History',
   'current_version' => 'Current version',
   'select_versiony' => 'Select version',
   'view_history' => 'View History',
-
   'edit_payment' => 'Edit Payment',
   'updated_payment' => 'Successfully updated payment',
   'deleted' => 'Deleted',
@@ -514,7 +449,6 @@ return array(
   'quote_email' => 'Quote Email',
   'reset_all' => 'Reset All',
   'approve' => 'Approve',
-
   'token_billing_type_id' => 'Token Billing',
   'token_billing_help' => 'Enables you to store credit cards with your gateway, and charge them at a later date.',
   'token_billing_1' => 'Disabled',
@@ -527,7 +461,6 @@ return array(
   'edit_payment_details' => 'Edit payment details',
   'token_billing' => 'Save card details',
   'token_billing_secure' => 'The data is stored securely by :stripe_link',
-
   'support' => 'Support',
   'contact_information' => 'Contact information',
   '256_encryption' => '256-Bit Encryption',
@@ -537,11 +470,9 @@ return array(
   'order_overview' => 'Order overview',
   'match_address' => '*Address must match address associated with credit card.',
   'click_once' => '*Please click "PAY NOW" only once - transaction may take up to 1 minute to process.',
-
   'default_invoice_footer' => 'Set default invoice footer',
   'invoice_footer' => 'Invoice footer',
   'save_as_default_footer' => 'Save as default footer',
-
   'token_management' => 'Token Management',
   'tokens' => 'Tokens',
   'add_token' => 'Add Token',
@@ -552,7 +483,6 @@ return array(
   'edit_token' => 'Edit Token',
   'delete_token' => 'Delete Token',
   'token' => 'Token',
-
   'add_gateway' => 'Add Gateway',
   'delete_gateway' => 'Delete Gateway',
   'edit_gateway' => 'Edit Gateway',
@@ -561,7 +491,6 @@ return array(
   'deleted_gateway' => 'Successfully deleted gateway',
   'pay_with_paypal' => 'PayPal',
   'pay_with_card' => 'Credit card',
-
   'change_password' => 'Change password',
   'current_password' => 'Current password',
   'new_password' => 'New password',
@@ -569,7 +498,6 @@ return array(
   'password_error_incorrect' => 'The current password is incorrect.',
   'password_error_invalid' => 'The new password is invalid.',
   'updated_password' => 'Successfully updated password',
-
   'api_tokens' => 'API Tokens',
   'users_and_tokens' => 'Users & Tokens',
   'account_login' => 'Account Login',
@@ -581,13 +509,11 @@ return array(
   'send_email' => 'Send email',
   'set_password' => 'Set Password',
   'converted' => 'Converted',
-
   'email_approved' => 'Email me when a quote is <b>approved</b>',
   'notification_quote_approved_subject' => 'Quote :invoice was approved by :client',
   'notification_quote_approved' => 'The following client :client approved Quote :invoice for :amount.',
   'resend_confirmation' => 'Resend confirmation email',
   'confirmation_resent' => 'The confirmation email was resent',
-
   'gateway_help_42' => ':link to sign up for BitPay.<br/>Note: use a Legacy API Key, not an API token.',
   'payment_type_credit_card' => 'Credit card',
   'payment_type_paypal' => 'PayPal',
@@ -595,7 +521,6 @@ return array(
   'knowledge_base' => 'Knowledge Base',
   'partial' => 'Partial',
   'partial_remaining' => ':partial of :balance',
-    
   'more_fields' => 'More Fields',
   'less_fields' => 'Less Fields',
   'client_name' => 'Client Name',
@@ -607,7 +532,6 @@ return array(
   'view_documentation' => 'View Documentation',
   'app_title' => 'Free Open-Source Online Invoicing',
   'app_description' => 'Invoice Ninja is a free, open-source solution for invoicing and billing customers. With Invoice Ninja, you can easily build and send beautiful invoices from any device that has access to the web. Your clients can print your invoices, download them as pdf files, and even pay you online from within the system.',
-  
   'rows' => 'rows',
   'www' => 'www',
   'logo' => 'Logo',
@@ -627,7 +551,6 @@ return array(
   'zapier' => 'Zapier <sup>Beta</sup>',
   'recurring' => 'Recurring',
   'last_invoice_sent' => 'Last invoice sent :date',
-
   'processed_updates' => 'Successfully completed update',
   'tasks' => 'Tasks',
   'new_task' => 'New Task',
@@ -673,12 +596,10 @@ return array(
   'invoice_labels' => 'Invoice Labels',
   'prefix' => 'Prefix',
   'counter' => 'Counter',
-
   'payment_type_dwolla' => 'Dwolla',
   'gateway_help_43' => ':link to sign up for Dwolla.',
   'partial_value' => 'Must be greater than zero and less than the total',
   'more_actions' => 'More Actions',
-
   'pro_plan_title' => 'NINJA PRO',
   'pro_plan_call_to_action' => 'Upgrade Now!',
   'pro_plan_feature1' => 'Create Unlimited Clients',
@@ -689,14 +610,12 @@ return array(
   'pro_plan_feature6' => 'Create Quotes & Pro-forma Invoices',
   'pro_plan_feature7' => 'Customize Invoice Field Titles & Numbering',
   'pro_plan_feature8' => 'Option to Attach PDFs to Client Emails',
-
   'resume' => 'Resume',
   'break_duration' => 'Break',
   'edit_details' => 'Edit Details',
   'work' => 'Work',
   'timezone_unset' => 'Please :link to set your timezone',
   'click_here' => 'click here',
-
   'email_receipt' => 'Email payment receipt to the client',
   'created_payment_emailed_client' => 'Successfully created payment and emailed client',
   'add_account' => 'Add Account',
@@ -706,8 +625,4 @@ return array(
   'unlinked_account' => 'Successfully unlinked accounts',
   'login' => 'Login',
   'or' => 'or',
-
-
-    
 );
-

@@ -3,25 +3,25 @@
 
 @section('head')
 
-  <link href="{{ asset('css/built.css') }}?no_cache={{ NINJA_VERSION }}" rel="stylesheet" type="text/css"/>    
+  <link href="{{ asset('css/built.css') }}?no_cache={{ NINJA_VERSION }}" rel="stylesheet" type="text/css"/>
 
   <style type="text/css">
 
     body {
       background-color: #EEEEEE;
-      padding-top: 114px; 
+      padding-top: 114px;
     }
 
     /* Fix for header covering stuff when the screen is narrower */
     @media screen and (min-width: 1200px) {
       body {
-        padding-top: 56px; 
+        padding-top: 56px;
       }
     }
 
     @media screen and (max-width: 768px) {
       body {
-        padding-top: 56px; 
+        padding-top: 56px;
       }
     }
 
@@ -38,12 +38,12 @@
   }
 
   @if (!Auth::check() || !Auth::user()->registered)
-  function validateSignUp(showError) 
+  function validateSignUp(showError)
   {
     var isFormValid = true;
     $(['first_name','last_name','email','password']).each(function(i, field) {
       var $input = $('form.signUpForm #new_'+field),
-      val = $.trim($input.val());      
+      val = $.trim($input.val());
       var isValid = val && val.length >= (field == 'password' ? 6 : 1);
       if (isValid && field == 'email') {
         isValid = isValidEmailAddress(val);
@@ -81,8 +81,8 @@
       type: 'POST',
       url: '{{ URL::to('signup/validate') }}',
       data: 'email=' + $('form.signUpForm #new_email').val(),
-      success: function(result) { 
-        if (result == 'available') {                        
+      success: function(result) {
+        if (result == 'available') {
           submitSignUp();
         } else {
           $('#errorTaken').show();
@@ -91,36 +91,36 @@
           $('#working').hide();
         }
       }
-    });         
+    });
   }
 
   function submitSignUp() {
     $.ajax({
       type: 'POST',
       url: '{{ URL::to('signup/submit') }}',
-      data: 'new_email=' + encodeURIComponent($('form.signUpForm #new_email').val()) + 
-      '&new_password=' + encodeURIComponent($('form.signUpForm #new_password').val()) + 
-      '&new_first_name=' + encodeURIComponent($('form.signUpForm #new_first_name').val()) + 
+      data: 'new_email=' + encodeURIComponent($('form.signUpForm #new_email').val()) +
+      '&new_password=' + encodeURIComponent($('form.signUpForm #new_password').val()) +
+      '&new_first_name=' + encodeURIComponent($('form.signUpForm #new_first_name').val()) +
       '&new_last_name=' + encodeURIComponent($('form.signUpForm #new_last_name').val()) +
       '&go_pro=' + $('#go_pro').val(),
-      success: function(result) { 
+      success: function(result) {
         if (result) {
           localStorage.setItem('guest_key', '');
           trackEvent('/account', '/signed_up');
           NINJA.isRegistered = true;
           $('#signUpButton').hide();
-          $('#myAccountButton').html(result);          
-        }            
+          $('#myAccountButton').html(result);
+        }
         $('#signUpSuccessDiv, #signUpFooter, #closeSignUpButton').show();
         $('#working, #saveSignUpButton').hide();
       }
-    });     
-  }      
+    });
+  }
 
   function checkForEnter(event)
   {
     if (event.keyCode === 13){
-      event.preventDefault();               
+      event.preventDefault();
       validateServerSignUp();
       return false;
     }
@@ -133,15 +133,15 @@
       NINJA.formIsChanged = false;
     }
 
-    if (force || NINJA.isRegistered) {            
+    if (force || NINJA.isRegistered) {
       window.location = '{{ URL::to('logout') }}';
     } else {
-      $('#logoutModal').modal('show');  
+      $('#logoutModal').modal('show');
     }
   }
 
-  function showSignUp() {    
-    $('#signUpModal').modal('show');    
+  function showSignUp() {
+    $('#signUpModal').modal('show');
   }
 
   NINJA.proPlanFeature = '';
@@ -162,17 +162,17 @@
   @if (Auth::check() && !Auth::user()->isPro())
   function submitProPlan() {
     trackEvent('/account', '/submit_pro_plan/' + NINJA.proPlanFeature);
-    if (NINJA.isRegistered) {      
+    if (NINJA.isRegistered) {
       $.ajax({
         type: 'POST',
         url: '{{ URL::to('account/go_pro') }}',
-        success: function(result) { 
+        success: function(result) {
           NINJA.formIsChanged = false;
           window.location = '/payment/' + result;
         }
-      });     
+      });
     } else {
-      $('#proPlanModal').modal('hide');    
+      $('#proPlanModal').modal('hide');
       $('#go_pro').val('true');
       showSignUp();
     }
@@ -186,17 +186,17 @@
     });
   }
 
-  function showUnlink(userAccountId, userId) {    
+  function showUnlink(userAccountId, userId) {
     NINJA.unlink = {
         'userAccountId': userAccountId,
         'userId': userId
     };
-    $('#unlinkModal').modal('show');    
+    $('#unlinkModal').modal('show');
     return false;
   }
 
-  function unlinkAccount() {    
-    window.location = '{{ URL::to('/unlink_account') }}' + '/' + NINJA.unlink.userAccountId + '/' + NINJA.unlink.userId;    
+  function unlinkAccount() {
+    window.location = '{{ URL::to('/unlink_account') }}' + '/' + NINJA.unlink.userAccountId + '/' + NINJA.unlink.userId;
   }
 
   function wordWrapText(value, width)
@@ -234,17 +234,17 @@
 
   // keep the token cookie valid to prevent token mismatch errors
   function keepAlive() {
-    window.setTimeout(function() { 
+    window.setTimeout(function() {
         $.get('{{ URL::to('/keep_alive') }}', function(data) {
             keepAlive();
         })
     }, 1000 * 60 * 60);
-  }      
+  }
 
-  $(function() {    
-    keepAlive();    
+  $(function() {
+    keepAlive();
 
-    window.setTimeout(function() { 
+    window.setTimeout(function() {
         $(".alert-hide").fadeOut(500);
     }, 2000);
 
@@ -257,17 +257,17 @@
       $('#search').css('width', '256px');
       $('ul.navbar-right').hide();
       if (!window.hasOwnProperty('searchData')) {
-        $.get('{{ URL::route('getSearchData') }}', function(data) {                         
-          window.searchData = true;                     
+        $.get('{{ URL::route('getSearchData') }}', function(data) {
+          window.searchData = true;
           var datasets = [];
           for (var type in data)
-          {                             
-            if (!data.hasOwnProperty(type)) continue;                           
+          {
+            if (!data.hasOwnProperty(type)) continue;
             datasets.push({
               name: type,
-              header: '&nbsp;<b>' + type  + '</b>',                                 
+              header: '&nbsp;<b>' + type  + '</b>',
               local: data[type]
-            });                                                         
+            });
           }
           if (datasets.length == 0) {
             return;
@@ -275,7 +275,7 @@
           $('#search').typeahead(datasets).on('typeahead:selected', function(element, datum, name) {
             var type = name == 'Contacts' ? 'clients' : name.toLowerCase();
             window.location = '{{ URL::to('/') }}' + '/' + type + '/' + datum.public_id;
-          }).focus().typeahead('setQuery', $('#search').val());                         
+          }).focus().typeahead('setQuery', $('#search').val());
         });
       }
     });
@@ -295,7 +295,7 @@
       $(['first_name','last_name','email','password']).each(function(i, field) {
         var $input = $('form.signUpForm #new_'+field);
         if (!$input.val()) {
-          $input.focus();                       
+          $input.focus();
           return false;
         }
       });
@@ -304,7 +304,7 @@
 
     @if (Auth::check() && !Utils::isNinja() && !Auth::user()->registered)
       $('#closeSignUpButton').hide();
-      showSignUp(); 
+      showSignUp();
     @elseif(Session::get('sign_up') || Input::get('sign_up'))
       showSignUp();
     @endif
@@ -313,7 +313,7 @@
 
   });
 
-</script>  
+</script>
 
 @stop
 
@@ -331,7 +331,7 @@
       </button>
       <a href="{{ URL::to(NINJA_WEB_URL) }}" class='navbar-brand' target="_blank">
         <img src="{{ asset('images/invoiceninja-logo.png') }}" style="height:18px;width:auto"/>
-      </a>	    
+      </a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -361,8 +361,8 @@
                     {{ Auth::user()->getDisplayName() }}
                 @endif
               <span class="caret"></span>
-            </div>            
-          </button>			
+            </div>
+          </button>
           <ul class="dropdown-menu user-accounts" role="menu">
             @if (session(SESSION_USER_ACCOUNTS))
                 @foreach (session(SESSION_USER_ACCOUNTS) as $item)
@@ -393,13 +393,13 @@
                 @endforeach
             @else
                 @include('user_account', [
-                    'account_name' => Auth::user()->account->name ?: trans('texts.untitled'), 
+                    'account_name' => Auth::user()->account->name ?: trans('texts.untitled'),
                     'user_name' => Auth::user()->getDisplayName(),
                     'account_key' => Auth::user()->account->account_key,
                     'selected' => true,
                 ])
-            @endif            
-            <li class="divider"></li>                
+            @endif
+            <li class="divider"></li>
             @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
                 <li>{!! link_to('/login?new_account=true', trans('texts.add_account')) !!}</li>
             @endif
@@ -407,9 +407,9 @@
           </ul>
         </div>
 
-      </div>	
-      
-      <ul class="nav navbar-nav navbar-right"> 
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog" title="{{ trans('texts.settings') }}"/>
@@ -426,17 +426,17 @@
       </ul>
 
 
-      <ul class="nav navbar-nav navbar-right"> 
+      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-time" title="{{ trans('texts.history') }}"/>
           </a>
-          <ul class="dropdown-menu">	        		        	
+          <ul class="dropdown-menu">
             @if (count(Session::get(RECENTLY_VIEWED)) == 0)
                 <li><a href="#">{{ trans('texts.no_items') }}</a></li>
             @else
                 @foreach (Session::get(RECENTLY_VIEWED) as $link)
-                    <li><a href="{{ $link->url }}">{{ $link->name }}</a></li>	
+                    <li><a href="{{ $link->url }}">{{ $link->name }}</a></li>
                 @endforeach
             @endif
           </ul>
@@ -445,14 +445,14 @@
 
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="text" id="search" style="width: 150px" 
+          <input type="text" id="search" style="width: 150px"
             class="form-control" placeholder="{{ trans('texts.search') }}">
         </div>
       </form>
 
 
-      
-      
+
+
     </div><!-- /.navbar-collapse -->
 
 
@@ -462,7 +462,7 @@
 
 
 <br/>
-<div class="container">		
+<div class="container">
 
   @if (Session::has('warning'))
   <div class="alert alert-warning">{!! Session::get('warning') !!}</div>
@@ -474,8 +474,8 @@
     </div>
   @elseif (Session::has('news_feed_message'))
     <div class="alert alert-info">
-      {!! Session::get('news_feed_message') !!}      
-      <a href="#" onclick="hideMessage()" class="pull-right">{{ trans('texts.hide') }}</a>      
+      {!! Session::get('news_feed_message') !!}
+      <a href="#" onclick="hideMessage()" class="pull-right">{{ trans('texts.hide') }}</a>
     </div>
   @endif
 
@@ -487,7 +487,7 @@
   {!! HTML::breadcrumbs() !!}
   @endif
 
-  @yield('content')		
+  @yield('content')
 
 </div>
 
@@ -544,7 +544,7 @@
         <br/>&nbsp;
       </div>
 
-      <div class="modal-footer" id="signUpFooter" style="margin-top: 0px">	      	
+      <div class="modal-footer" id="signUpFooter" style="margin-top: 0px">
         <button type="button" class="btn btn-default" id="closeSignUpButton" data-dismiss="modal">{{ trans('texts.close') }} <i class="glyphicon glyphicon-remove-circle"></i></button>
         <button type="button" class="btn btn-primary" id="saveSignUpButton" onclick="validateServerSignUp()" disabled>{{ trans('texts.save') }} <i class="glyphicon glyphicon-floppy-disk"></i></button>
       </div>
@@ -561,14 +561,14 @@
         <h4 class="modal-title" id="myModalLabel">{{ trans('texts.logout') }}</h4>
       </div>
 
-      <div class="container">	     
+      <div class="container">
         <h3>{{ trans('texts.are_you_sure') }}</h3>
-        <p>{{ trans('texts.erase_data') }}</p>	      	
+        <p>{{ trans('texts.erase_data') }}</p>
       </div>
 
-      <div class="modal-footer" id="signUpFooter">	      	
+      <div class="modal-footer" id="signUpFooter">
         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('texts.cancel') }}</button>
-        <button type="button" class="btn btn-primary" onclick="logout(true)">{{ trans('texts.logout') }}</button>	      	
+        <button type="button" class="btn btn-primary" onclick="logout(true)">{{ trans('texts.logout') }}</button>
       </div>
     </div>
   </div>
@@ -584,13 +584,13 @@
         <h4 class="modal-title" id="myModalLabel">{{ trans('texts.unlink_account') }}</h4>
       </div>
 
-      <div class="container">        
-        <h3>{{ trans('texts.are_you_sure') }}</h3>        
+      <div class="container">
+        <h3>{{ trans('texts.are_you_sure') }}</h3>
       </div>
 
-      <div class="modal-footer" id="signUpFooter">          
+      <div class="modal-footer" id="signUpFooter">
         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('texts.cancel') }}</button>
-        <button type="button" class="btn btn-primary" onclick="unlinkAccount()">{{ trans('texts.unlink') }}</button>           
+        <button type="button" class="btn btn-primary" onclick="unlinkAccount()">{{ trans('texts.unlink') }}</button>
       </div>
     </div>
   </div>
@@ -601,11 +601,11 @@
   <div class="modal fade" id="proPlanModal" tabindex="-1" role="dialog" aria-labelledby="proPlanModalLabel" aria-hidden="true">
     <div class="modal-dialog large-dialog">
       <div class="modal-content pro-plan-modal">
-        
+
 
         <div class="pull-right">
             <img onclick="hideProPlan()" class="close" src="{{ asset('images/pro_plan/close.png') }}"/>
-        </div>        
+        </div>
         <div class="row">
 
             <div class="col-md-7 left-side">
@@ -637,10 +637,10 @@
 @endif
 
 {{-- Per our license, please do not remove or modify this section. --}}
-@if (!Utils::isNinja())    
+@if (!Utils::isNinja())
 <div class="container">
-  {{ trans('texts.powered_by') }} <a href="https://www.invoiceninja.com/?utm_source=powered_by" target="_blank">InvoiceNinja.com</a> | 
-  @if (Auth::user()->account->isWhiteLabel())  
+  {{ trans('texts.powered_by') }} <a href="https://www.invoiceninja.com/?utm_source=powered_by" target="_blank">InvoiceNinja.com</a> |
+  @if (Auth::user()->account->isWhiteLabel())
     {{ trans('texts.white_labeled') }}
   @else
     <a href="#" onclick="$('#whiteLabelModal').modal('show');">{{ trans('texts.white_label_link') }}</a>
@@ -657,7 +657,7 @@
             <p>{{ trans('texts.white_label_text')}}</p>
           </div>
 
-          <div class="modal-footer" id="signUpFooter" style="margin-top: 0px">          
+          <div class="modal-footer" id="signUpFooter" style="margin-top: 0px">
             <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('texts.close') }} </button>
             {{-- DropdownButton::success_lg(trans('texts.buy'), [
                 ['url' => URL::to(""), 'label' => trans('texts.pay_with_paypal')],
