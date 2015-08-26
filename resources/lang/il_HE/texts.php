@@ -287,7 +287,7 @@ return array (
   'custom_fields' => 'שדות מותאמים אישית',
   'company_fields' => 'שדות חברה',
   'client_fields' => 'שדות לקוח',
-  'field_label' => 'תבית שדה',
+  'field_label' => 'תווית שדה',
   'field_value' => 'ערך שדה',
   'edit' => 'ערוך',
   'set_name' => 'Set your company name',

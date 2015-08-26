@@ -65,6 +65,12 @@
 			bold: 'Roboto-Medium.ttf',
 			italics: 'Roboto-Italic.ttf',
 			bolditalics: 'Roboto-Italic.ttf'
+		},
+		DejaVuSans: {
+			normal: 'DejaVuSans.ttf',
+			bold: 'DejaVuSans-Bold.ttf',
+			italics: 'DejaVuSans-Oblique.ttf',
+			bolditalics: 'DejaVuSans-BoldOblique.ttf'
 		}
 	};
 
@@ -3001,11 +3007,11 @@
 				if(!curGroup || deco !== curGroup.decoration ||
 						style !== curGroup.decorationStyle || color !== curGroup.decorationColor ||
 						deco === 'lineThrough') {
-			
+
 					curGroup = {
 						line: line,
-						decoration: deco, 
-						decorationColor: color, 
+						decoration: deco,
+						decorationColor: color,
 						decorationStyle: style,
 						inlines: [ inline ]
 					};
@@ -3015,7 +3021,7 @@
 				}
 			}
 		}
-		
+
 		return groups;
 	}
 
@@ -3042,9 +3048,9 @@
 			ascent = biggerInline.font.ascender / 1000 * biggerInline.fontSize,
 			height = biggerInline.height,
 			descent = height - ascent;
-		
+
 		var lw = 0.5 + Math.floor(Math.max(biggerInline.fontSize - 8, 0) / 2) * 0.12;
-		
+
 		switch (group.decoration) {
 			case 'underline':
 				y += lineAscent + descent * 0.45;
@@ -3059,7 +3065,7 @@
 				throw 'Unkown decoration : ' + group.decoration;
 		}
 		pdfKitDoc.save();
-		
+
 		if(group.decorationStyle === 'double') {
 			var gap = Math.max(0.5, lw*2);
 			pdfKitDoc	.fillColor(group.decorationColor)
@@ -3096,7 +3102,7 @@
 					rwx += sh*6;
 				}
 			pdfKitDoc.stroke(group.decorationColor);
-			
+
 		} else {
 			pdfKitDoc	.fillColor(group.decorationColor)
 						.rect(x + firstInline.x, y-lw/2, totalWidth, lw)
@@ -14510,7 +14516,7 @@
 					margin = convertMargin(flattenedStyleArray.margin);
 				}
 			}
-			
+
 			margin = processSingleMargins(node, margin);
 
 			if(node.margin){
@@ -15218,9 +15224,9 @@
 	};
 
 	PageElementWriter.prototype.moveToNextPage = function(pageOrientation) {
-		
+
 		var nextPage = this.writer.context.moveToNextPage(pageOrientation);
-		
+
 	  if (nextPage.newPageCreated) {
 			this.repeatables.forEach(function(rep) {
 				this.writer.addFragment(rep, true);
@@ -16690,7 +16696,7 @@
 /* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
+
 	/**
 	 * isArray
 	 */
@@ -17664,7 +17670,7 @@
 	//   modules, so it is better not to alter this value unless you know what
 	//   you're doing.
 	function buildCanvas(data, options) {
-	   
+
 	    var canvas = [];
 	    var background = data.background || '#fff';
 	    var foreground = data.foreground || '#000';
@@ -17673,12 +17679,12 @@
 		var n = matrix.length;
 		var modSize = Math.floor( options.fit ? options.fit/n : 5 );
 		var size = n * modSize;
-		
+
 	    canvas.push({
 	      type: 'rect',
 	      x: 0, y: 0, w: size, h: size, lineWidth: 0, color: background
 	    });
-	    
+
 		for (var i = 0; i < n; ++i) {
 			for (var j = 0; j < n; ++j) {
 	            if(matrix[i][j]) {
@@ -17694,12 +17700,12 @@
 	            }
 	        }
 	    }
-	    
+
 	    return {
 	        canvas: canvas,
 	        size: size
 	    };
-			
+
 	}
 
 	function measure(node) {
@@ -19734,7 +19740,7 @@
 	      this._fontSize = 12;
 	      this._font = null;
 	      this._registeredFonts = {};
-	      
+
 	    },
 	    font: function(src, family, size) {
 	      var cacheKey, font, id, _ref;
@@ -21435,7 +21441,7 @@
 	function Zlib(mode) {
 	  if (mode < exports.DEFLATE || mode > exports.UNZIP)
 	    throw new TypeError("Bad argument");
-	    
+
 	  this.mode = mode;
 	  this.init_done = false;
 	  this.write_in_progress = false;
@@ -21453,18 +21459,18 @@
 	  this.memLevel = memLevel;
 	  this.strategy = strategy;
 	  // dictionary not supported.
-	  
+
 	  if (this.mode === exports.GZIP || this.mode === exports.GUNZIP)
 	    this.windowBits += 16;
-	    
+
 	  if (this.mode === exports.UNZIP)
 	    this.windowBits += 32;
-	    
+
 	  if (this.mode === exports.DEFLATERAW || this.mode === exports.INFLATERAW)
 	    this.windowBits = -this.windowBits;
-	    
+
 	  this.strm = new zstream();
-	  
+
 	  switch (this.mode) {
 	    case exports.DEFLATE:
 	    case exports.GZIP:
@@ -21490,12 +21496,12 @@
 	    default:
 	      throw new Error("Unknown mode " + this.mode);
 	  }
-	  
+
 	  if (status !== exports.Z_OK) {
 	    this._error(status);
 	    return;
 	  }
-	  
+
 	  this.write_in_progress = false;
 	  this.init_done = true;
 	};
@@ -21507,31 +21513,31 @@
 	Zlib.prototype._writeCheck = function() {
 	  if (!this.init_done)
 	    throw new Error("write before init");
-	    
+
 	  if (this.mode === exports.NONE)
 	    throw new Error("already finalized");
-	    
+
 	  if (this.write_in_progress)
 	    throw new Error("write already in progress");
-	    
+
 	  if (this.pending_close)
 	    throw new Error("close is pending");
 	};
 
-	Zlib.prototype.write = function(flush, input, in_off, in_len, out, out_off, out_len) {    
+	Zlib.prototype.write = function(flush, input, in_off, in_len, out, out_off, out_len) {
 	  this._writeCheck();
 	  this.write_in_progress = true;
-	  
+
 	  var self = this;
 	  process.nextTick(function() {
 	    self.write_in_progress = false;
 	    var res = self._write(flush, input, in_off, in_len, out, out_off, out_len);
 	    self.callback(res[0], res[1]);
-	    
+
 	    if (self.pending_close)
 	      self.close();
 	  });
-	  
+
 	  return this;
 	};
 
@@ -21549,7 +21555,7 @@
 
 	Zlib.prototype._write = function(flush, input, in_off, in_len, out, out_off, out_len) {
 	  this.write_in_progress = true;
-	  
+
 	  if (flush !== exports.Z_NO_FLUSH &&
 	      flush !== exports.Z_PARTIAL_FLUSH &&
 	      flush !== exports.Z_SYNC_FLUSH &&
@@ -21558,18 +21564,18 @@
 	      flush !== exports.Z_BLOCK) {
 	    throw new Error("Invalid flush value");
 	  }
-	  
+
 	  if (input == null) {
 	    input = new Buffer(0);
 	    in_len = 0;
 	    in_off = 0;
 	  }
-	  
+
 	  if (out._set)
 	    out.set = out._set;
 	  else
 	    out.set = bufferSet;
-	  
+
 	  var strm = this.strm;
 	  strm.avail_in = in_len;
 	  strm.input = input;
@@ -21577,7 +21583,7 @@
 	  strm.avail_out = out_len;
 	  strm.output = out;
 	  strm.next_out = out_off;
-	  
+
 	  switch (this.mode) {
 	    case exports.DEFLATE:
 	    case exports.GZIP:
@@ -21593,11 +21599,11 @@
 	    default:
 	      throw new Error("Unknown mode " + this.mode);
 	  }
-	  
+
 	  if (status !== exports.Z_STREAM_END && status !== exports.Z_OK) {
 	    this._error(status);
 	  }
-	  
+
 	  this.write_in_progress = false;
 	  return [strm.avail_in, strm.avail_out];
 	};
@@ -21607,15 +21613,15 @@
 	    this.pending_close = true;
 	    return;
 	  }
-	  
+
 	  this.pending_close = false;
-	  
+
 	  if (this.mode === exports.DEFLATE || this.mode === exports.GZIP || this.mode === exports.DEFLATERAW) {
 	    zlib_deflate.deflateEnd(this.strm);
 	  } else {
 	    zlib_inflate.inflateEnd(this.strm);
 	  }
-	  
+
 	  this.mode = exports.NONE;
 	};
 
@@ -21630,7 +21636,7 @@
 	      var status = zlib_inflate.inflateReset(this.strm);
 	      break;
 	  }
-	  
+
 	  if (status !== exports.Z_OK) {
 	    this._error(status);
 	  }
@@ -21638,7 +21644,7 @@
 
 	Zlib.prototype._error = function(status) {
 	  this.onerror(msg[status] + ': ' + this.strm.msg, status);
-	  
+
 	  this.write_in_progress = false;
 	  if (this.pending_close)
 	    this.close();
@@ -21657,20 +21663,20 @@
 	/*
 	# MIT LICENSE
 	# Copyright (c) 2011 Devon Govett
-	# 
-	# Permission is hereby granted, free of charge, to any person obtaining a copy of this 
-	# software and associated documentation files (the "Software"), to deal in the Software 
-	# without restriction, including without limitation the rights to use, copy, modify, merge, 
-	# publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons 
+	#
+	# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+	# software and associated documentation files (the "Software"), to deal in the Software
+	# without restriction, including without limitation the rights to use, copy, modify, merge,
+	# publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 	# to whom the Software is furnished to do so, subject to the following conditions:
-	# 
-	# The above copyright notice and this permission notice shall be included in all copies or 
+	#
+	# The above copyright notice and this permission notice shall be included in all copies or
 	# substantial portions of the Software.
-	# 
-	# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING 
-	# BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-	# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-	# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+	#
+	# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+	# BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	*/
 
@@ -30781,12 +30787,12 @@
 	 * An implementation of Ruby's string.succ method.
 	 * By Devon Govett
 	 *
-	 * Returns the successor to str. The successor is calculated by incrementing characters starting 
+	 * Returns the successor to str. The successor is calculated by incrementing characters starting
 	 * from the rightmost alphanumeric (or the rightmost character if there are no alphanumerics) in the
 	 * string. Incrementing a digit always results in another digit, and incrementing a letter results in
 	 * another letter of the same case.
 	 *
-	 * If the increment generates a carry, the character to the left of it is incremented. This 
+	 * If the increment generates a carry, the character to the left of it is incremented. This
 	 * process repeats until there is no carry, adding an additional character if necessary.
 	 *
 	 * succ("abcd")      == "abce"
