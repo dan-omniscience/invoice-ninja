@@ -2,35 +2,22 @@
 
 use Eloquent;
 use Auth;
-use Cache;
-use App\Models\InvoiceDesign;
 
 class InvoiceDesign extends Eloquent
 {
     public $timestamps = false;
 
-    public static function getDesigns()
+    public function scopeAvailableDesigns($query)
     {
-        $account = Auth::user()->account;
-        $designs = Cache::get('invoiceDesigns');
+        $designs = $query->where('id', '<=', \Auth::user()->maxInvoiceDesignId())->orderBy('id')->get();
 
-        foreach ($designs as $design) {
-            if ($design->id > Auth::user()->maxInvoiceDesignId()) {
-                $designs->pull($design->id);
-            }
-            
-            $design->javascript = $design->pdfmake;
-            $design->pdfmake = null;
-
-            if ($design->id == CUSTOM_DESIGN) {
-                if ($account->custom_design) {
-                    $design->javascript = $account->custom_design;
-                } else {
-                    $designs->pop();
-                }
+        foreach ($designs as $design) {                            
+            $fileName = public_path(strtolower("js/templates/{$design->name}.js"));
+            if (Auth::user()->account->utf8_invoices && file_exists($fileName)) {
+                $design->javascript = file_get_contents($fileName);
             }
         }
-        
+
         return $designs;
     }
 }

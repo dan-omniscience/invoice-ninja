@@ -48,11 +48,6 @@ class Invoice extends EntityModel
         return $this->belongsTo('App\Models\Invoice');
     }
 
-    public function recurring_invoices()
-    {
-        return $this->hasMany('App\Models\Invoice', 'recurring_invoice_id');
-    }
-
     public function invitations()
     {
         return $this->hasMany('App\Models\Invitation')->orderBy('invitations.contact_id');
@@ -60,7 +55,7 @@ class Invoice extends EntityModel
 
     public function getName()
     {
-        return $this->is_recurring ? trans('texts.recurring') : $this->invoice_number;
+        return $this->invoice_number;
     }
 
     public function getFileName()
@@ -74,14 +69,9 @@ class Invoice extends EntityModel
         return storage_path() . '/pdfcache/cache-' . $this->id . '.pdf';
     }
 
-    public static function calcLink($invoice)
-    {
-        return link_to('invoices/' . $invoice->public_id, $invoice->invoice_number);
-    }
-
     public function getLink()
     {
-        return self::calcLink($this);
+        return link_to('invoices/'.$this->public_id, $this->invoice_number);
     }
 
     public function getEntityType()
@@ -262,13 +252,8 @@ class Invoice extends EntityModel
     }
 }
 
-Invoice::creating(function ($invoice) {
-    if (!$invoice->is_recurring) {
-        $invoice->account->incrementCounter($invoice->is_quote);
-    }
-});
-
 Invoice::created(function ($invoice) {
+    $invoice->account->incrementCounter($invoice->invoice_number, $invoice->is_quote, $invoice->recurring_invoice_id);
     Activity::createInvoice($invoice);
 });
 

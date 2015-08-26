@@ -617,8 +617,8 @@ return array (
   'unlinked_account' => 'Successfully unlinked accounts',
   'login' => 'Login',
   'or' => 'or',
-<<<<<<< HEAD
-=======
+
+
 
   'email_error' => 'There was a problem sending the email',
   'confirm_recurring_timing' => 'Note: emails are sent at the start of the hour.',
@@ -672,5 +672,5 @@ return array (
   
 
     
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
 );

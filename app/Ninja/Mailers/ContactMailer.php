@@ -23,8 +23,6 @@ class ContactMailer extends Mailer
         $emailTemplate = $invoice->account->getEmailTemplate($entityType);
         $invoiceAmount = Utils::formatMoney($invoice->getRequestedAmount(), $invoice->client->getCurrencyId());
 
-        $this->initClosure($invoice);
-
         foreach ($invoice->invitations as $invitation) {
             if (!$invitation->user || !$invitation->user->email || $invitation->user->trashed()) {
                 return false;
@@ -42,8 +40,7 @@ class ContactMailer extends Mailer
                 '$client' => $invoice->client->getDisplayName(),
                 '$account' => $accountName,
                 '$contact' => $invitation->contact->getDisplayName(),
-                '$amount' => $invoiceAmount,
-                '$advancedRawInvoice->' => '$'
+                '$amount' => $invoiceAmount
             ];
 
             // Add variables for available payment types
@@ -52,7 +49,6 @@ class ContactMailer extends Mailer
             }
 
             $data['body'] = str_replace(array_keys($variables), array_values($variables), $emailTemplate);
-            $data['body'] = preg_replace_callback('/\{\{\$?(.*)\}\}/', $this->advancedTemplateHandler, $data['body']);
             $data['link'] = $invitation->getLink();
             $data['entityType'] = $entityType;
             $data['invoice_id'] = $invoice->id;
@@ -73,8 +69,6 @@ class ContactMailer extends Mailer
         }
 
         Event::fire(new InvoiceSent($invoice));
-
-        return $response;
     }
 
     public function sendPaymentConfirmation(Payment $payment)
@@ -128,23 +122,5 @@ class ContactMailer extends Mailer
         ];
         
         $this->sendTo($email, CONTACT_EMAIL, CONTACT_NAME, $subject, $view, $data);
-    }
-
-    private function initClosure($object)
-    {
-        $this->advancedTemplateHandler = function($match) use ($object) {
-            for ($i = 1; $i < count($match); $i++) {
-                $blobConversion = $match[$i];
-
-                if (isset($$blobConversion)) {
-                    return $$blobConversion;
-                } else if (preg_match('/trans\(([\w\.]+)\)/', $blobConversion, $regexTranslation)) {
-                    return trans($regexTranslation[1]);
-                } else if (strpos($blobConversion, '->') !== false) {
-                    return Utils::stringToObjectResolution($object, $blobConversion);
-                }
-
-            }
-        };
     }
 }

@@ -23,7 +23,7 @@ MIT license.
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 
@@ -81,7 +81,7 @@ var jsPDF = (function () {
         // DO NOT ADD UTF8 ENCODING CODE HERE!!!!
 
         /* @preserve
-        ====================================================================
+        =====
         base64 encoder
         MIT, GPL
 
@@ -95,7 +95,7 @@ var jsPDF = (function () {
         +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
         +   improved by: Rafal Kukawski (http://kukawski.pl)
         +                Daniel Dotsenko, Willow Systems Corp, willow-systems.com
-        ====================================================================
+        =====
         */
 
             var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
@@ -1956,7 +1956,7 @@ Copyright (c) 2012 https://github.com/siefkenj/
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 ;(function(jsPDFAPI) {
@@ -2185,7 +2185,7 @@ Copyright (c) 2012 2012 Willow Systems Corporation, willow-systems.com
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 ;(function(jsPDFAPI) {
@@ -2508,7 +2508,7 @@ Renderer.prototype.addText = function(text, css){
 }
 
 
-//=====================
+//
 // these are DrillForContent and friends
 
 var FontNameDB = {
@@ -2779,7 +2779,7 @@ Copyright (c) 2012 Willow Systems Corporation, willow-systems.com
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 ;(function(jsPDFAPI) {
@@ -2961,7 +2961,7 @@ MIT license.
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 ;(function(API) {
@@ -3259,7 +3259,7 @@ MIT license.
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 ;(function(API) {
@@ -3630,7 +3630,7 @@ API.events.push([
 ]) // end of adding event handler
 
 })(jsPDF.API);
-/** ==================================================================== 
+/** ===== 
  * jsPDF Cell plugin
  * Copyright (c) 2013 Youssef Beddad, youssef.beddad@gmail.com
  *               2013 Eduardo Menezes de Morais, eduardo.morais@usp.br
@@ -3653,7 +3653,7 @@ API.events.push([
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 (function (jsPDFAPI) {
@@ -4010,7 +4010,7 @@ API.events.push([
     };
 
 })(jsPDF.API);
-/** ==================================================================== 
+/** ===== 
  * jsPDF total_pages plugin
  * Copyright (c) 2013 Eduardo Menezes de Morais, eduardo.morais@usp.br
  * 
@@ -4032,7 +4032,7 @@ API.events.push([
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * ====================================================================
+ * =====
  */
 
 (function(jsPDFAPI) {

@@ -10,23 +10,34 @@ use Validator;
 use Redirect;
 use Session;
 use DropdownButton;
-use DateTime;
-use DateTimeZone;
 use App\Models\Client;
 use App\Models\Task;
+
+/*
+use Auth;
+use Cache;
+
+use App\Models\Activity;
+use App\Models\Contact;
+use App\Models\Invoice;
+use App\Models\Size;
+use App\Models\PaymentTerm;
+use App\Models\Industry;
+use App\Models\Currency;
+use App\Models\Country;
+*/
+
 use App\Ninja\Repositories\TaskRepository;
-use App\Ninja\Repositories\InvoiceRepository;
 
 class TaskController extends BaseController
 {
     protected $taskRepo;
 
-    public function __construct(TaskRepository $taskRepo, InvoiceRepository $invoiceRepo)
+    public function __construct(TaskRepository $taskRepo)
     {
         parent::__construct();
 
         $this->taskRepo = $taskRepo;
-        $this->invoiceRepo = $invoiceRepo;
     }
 
     /**
@@ -36,7 +47,10 @@ class TaskController extends BaseController
      */
     public function index()
     {
-        self::checkTimezone();
+        if (!Auth::user()->account->timezone) {
+            $link = link_to('/company/details', trans('texts.click_here'), ['target' => '_blank']);
+            Session::flash('warning', trans('texts.timezone_unset', ['link' => $link]));
+        }
 
         return View::make('list', array(
             'entityType' => ENTITY_TASK,
@@ -57,8 +71,8 @@ class TaskController extends BaseController
                   ->addColumn('client_name', function ($model) { return $model->client_public_id ? link_to('clients/'.$model->client_public_id, Utils::getClientDisplayName($model)) : ''; });
         }
 
-        return $table->addColumn('created_at', function($model) { return Task::calcStartTime($model); })
-                ->addColumn('time_log', function($model) { return gmdate('H:i:s', Task::calcDuration($model)); })
+        return $table->addColumn('start_time', function($model) { return Utils::fromSqlDateTime($model->start_time); })
+                ->addColumn('duration', function($model) { return gmdate('H:i:s', $model->is_running ? time() - strtotime($model->start_time) : $model->duration); })
                 ->addColumn('description', function($model) { return $model->description; })
                 ->addColumn('invoice_number', function($model) { return self::getStatusLabel($model); })
                 ->addColumn('dropdown', function ($model) {
@@ -128,15 +142,12 @@ class TaskController extends BaseController
      */
     public function create($clientPublicId = 0)
     {
-        self::checkTimezone();
-
         $data = [
             'task' => null,
             'clientPublicId' => Input::old('client') ? Input::old('client') : $clientPublicId,
             'method' => 'POST',
             'url' => 'tasks',
             'title' => trans('texts.new_task'),
-            'minuteOffset' => Utils::getTiemstampOffset(),
         ];
 
         $data = array_merge($data, self::getViewModel());
@@ -152,24 +163,14 @@ class TaskController extends BaseController
      */
     public function edit($publicId)
     {
-        self::checkTimezone();
-
         $task = Task::scope($publicId)->with('client', 'invoice')->firstOrFail();
 
         $actions = [];
         if ($task->invoice) {
             $actions[] = ['url' => URL::to("inovices/{$task->invoice->public_id}/edit"), 'label' => trans("texts.view_invoice")];
         } else {
-            $actions[] = ['url' => 'javascript:submitAction("invoice")', 'label' => trans("texts.create_invoice")];
-
-            // check for any open invoices
-            $invoices = $task->client_id ? $this->invoiceRepo->findOpenInvoices($task->client_id) : [];
-
-            foreach ($invoices as $invoice) {
-                $actions[] = ['url' => 'javascript:submitAction("add_to_invoice", '.$invoice->public_id.')', 'label' => trans("texts.add_to_invoice", ["invoice" => $invoice->invoice_number])];
-            }
+            $actions[] = ['url' => 'javascript:submitAction("invoice")', 'label' => trans("texts.invoice_task")];
         }
-
         $actions[] = DropdownButton::DIVIDER;
         if (!$task->trashed()) {
             $actions[] = ['url' => 'javascript:submitAction("archive")', 'label' => trans('texts.archive_task')];
@@ -177,16 +178,15 @@ class TaskController extends BaseController
         } else {
             $actions[] = ['url' => 'javascript:submitAction("restore")', 'label' => trans('texts.restore_task')];
         }
-
+        
         $data = [
             'task' => $task,
             'clientPublicId' => $task->client ? $task->client->public_id : 0,
             'method' => 'PUT',
             'url' => 'tasks/'.$publicId,
             'title' => trans('texts.edit_task'),
-            'duration' => $task->is_running ? $task->getCurrentDuration() : $task->getDuration(),
-            'actions' => $actions,
-            'minuteOffset' => Utils::getTiemstampOffset(),
+            'duration' => $task->resume_time ? ($task->duration + strtotime('now') - strtotime($task->resume_time)) : (strtotime('now') - strtotime($task->start_time)),
+            'actions' => $actions
         ];
 
         $data = array_merge($data, self::getViewModel());
@@ -216,7 +216,7 @@ class TaskController extends BaseController
     {
         $action = Input::get('action');
 
-        if (in_array($action, ['archive', 'delete', 'invoice', 'restore', 'add_to_invoice'])) {
+        if (in_array($action, ['archive', 'delete', 'invoice', 'restore'])) {
             return self::bulk();
         }
 
@@ -235,11 +235,12 @@ class TaskController extends BaseController
             $this->taskRepo->save($ids, ['action' => $action]);
             Session::flash('message', trans('texts.stopped_task'));
             return Redirect::to('tasks');
-        } else if ($action == 'invoice' || $action == 'add_to_invoice') {
+        } else if ($action == 'invoice') {
+
             $tasks = Task::scope($ids)->with('client')->get();
             $clientPublicId = false;
             $data = [];
-            
+
             foreach ($tasks as $task) {
                 if ($task->client) {
                     if (!$clientPublicId) {
@@ -257,21 +258,16 @@ class TaskController extends BaseController
                     Session::flash('error', trans('texts.task_error_invoiced'));
                     return Redirect::to('tasks');
                 }
-                
+
                 $data[] = [
                     'publicId' => $task->public_id,
                     'description' => $task->description,
-                    'startTime' => $task->getStartTime(),
-                    'duration' => $task->getHours(),
+                    'startTime' => Utils::fromSqlDateTime($task->start_time),
+                    'duration' => round($task->duration / (60 * 60), 2)
                 ];
             }
 
-            if ($action == 'invoice') {
-                return Redirect::to("invoices/create/{$clientPublicId}")->with('tasks', $data);
-            } else {
-                $invoiceId = Input::get('invoice_id');
-                return Redirect::to("invoices/{$invoiceId}/edit")->with('tasks', $data);
-            }
+            return Redirect::to("invoices/create/{$clientPublicId}")->with('tasks', $data);
         } else {
             $count = $this->taskRepo->bulk($ids, $action);
 
@@ -283,14 +279,6 @@ class TaskController extends BaseController
             } else {
                 return Redirect::to('tasks');
             }
-        }
-    }
-
-    private function checkTimezone()
-    {
-        if (!Auth::user()->account->timezone) {
-            $link = link_to('/company/details?focus=timezone_id', trans('texts.click_here'), ['target' => '_blank']);
-            Session::flash('warning', trans('texts.timezone_unset', ['link' => $link]));
         }
     }
 }

@@ -197,12 +197,12 @@ return array (
   'limit_clients' => 'Entschuldige, das überschreitet das Limit von :count Kunden',
   'payment_error' => 'Es ist ein Fehler während der Zahlung aufgetreten. Bitte versuche es später noch einmal.',
   'registration_required' => 'Bitte melde dich an um eine Rechnung zu versenden',
-<<<<<<< HEAD
+
   'confirmation_required' => 'Bitte bestätige deine E-Mail Adresse',
-=======
+
   'confirmation_required' => 'Bitte bestätige deine E-Mail-Adresse',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'updated_client' => 'Kunde erfolgreich aktualisiert',
   'archived_client' => 'Kunde erfolgreich archiviert',
   'archived_clients' => ':count Kunden erfolgreich archiviert',
@@ -228,13 +228,13 @@ return array (
   'archived_credits' => ':count Guthaben erfolgreich archiviert',
   'deleted_credit' => 'Guthaben erfolgreich gelöscht',
   'deleted_credits' => ':count Guthaben erfolgreich gelöscht',
-<<<<<<< HEAD
+
   'confirmation_subject' => 'Invoice Ninja Kontobestätigung',
-=======
+
 
   // Emails
   'confirmation_subject' => 'InvoiceNinja Kontobestätigung',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'confirmation_header' => 'Kontobestätigung',
   'confirmation_message' => 'Bitte klicke auf den folgenden Link um dein Konto zu bestätigen.',
   'invoice_message' => 'Um Ihre Rechnung über :amount einzusehen, klicken Sie bitte auf den folgenden Link:',
@@ -243,11 +243,11 @@ return array (
   'email_salutation' => 'Sehr geehrte/r :name,',
   'email_signature' => 'Mit freundlichen Grüßen,',
   'email_from' => 'Das InvoiceNinja Team',
-<<<<<<< HEAD
+
   'user_email_footer' => 'Um deine E-Mail Benachrichtigungen anzupassen besuche bitte https://ninja.local/company/notifications',
-=======
+
   'user_email_footer' => 'Um deine E-Mail-Benachrichtigungen anzupassen besuche bitte '.SITE_URL.'/company/notifications',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'invoice_link_message' => 'Um deine Kundenrechnung anzuschauen, klicke auf den folgenden Link:',
   'notification_invoice_paid_subject' => 'Die Rechnung :invoice wurde von :client bezahlt',
   'notification_invoice_sent_subject' => 'Die Rechnung :invoice wurde an :client versendet',
@@ -256,13 +256,13 @@ return array (
   'notification_invoice_sent' => 'Dem folgenden Kunden :client wurde die Rechnung :invoice über :amount zugesendet.',
   'notification_invoice_viewed' => 'Der folgende Kunde :client hat sich Rechnung :invoice über :amount angesehen.',
   'reset_password' => 'Du kannst dein Passwort zurücksetzen, indem du auf den folgenden Link klickst:',
-<<<<<<< HEAD
+
   'reset_password_footer' => 'Wenn du das Zurücksetzen des Passworts nicht beantragt hast benachrichtige bitte unseren Support: dan@omniscience.co.il',
-=======
+
   'reset_password_footer' => 'Wenn du das Zurücksetzen des Passworts nicht beantragt hast, benachrichtige bitte unseren Support: ' . CONTACT_EMAIL,
 
   // Payment page
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'secure_payment' => 'Sichere Zahlung',
   'card_number' => 'Kartennummer',
   'expiration_month' => 'Ablaufmonat',
@@ -278,25 +278,25 @@ return array (
     'password_reset' => 'Dein Passwort wurde erfolgreich geändert.',
     'wrong_password_reset' => 'Ungültiges Passwort. Versuche es erneut',
   ),
-<<<<<<< HEAD
+
   'pro_plan' => 
   array (
     'remove_logo' => ':link, um das Invoice Ninja Logo zu entfernen, indem du dem Pro Plan beitrittst',
-=======
+
 
   // Pro Plan
   'pro_plan' => [
     'remove_logo' => ':link, um das InvoiceNinja-Logo zu entfernen, indem du dem Pro Plan beitrittst',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
     'remove_logo_link' => 'Klicke hier',
   ),
   'logout' => 'Ausloggen',
   'sign_up_to_save' => 'Melde dich an, um deine Arbeit zu speichern',
-<<<<<<< HEAD
+
   'agree_to_terms' => 'Ich akzeptiere die Invoice Ninja :terms',
-=======
+
   'agree_to_terms' =>'Ich akzeptiere die InvoiceNinja :terms',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'terms_of_service' => 'Service-Bedingungen',
   'email_taken' => 'Diese E-Mail-Adresse ist bereits registriert',
   'working' => 'Wird bearbeitet',
@@ -330,12 +330,12 @@ return array (
   'created_product' => 'Produkt erfolgreich erstellt',
   'archived_product' => 'Produkt erfolgreich archiviert',
   'product_library' => 'Produktbibliothek',
-<<<<<<< HEAD
+
   'pro_plan_custom_fields' => ':link to enable custom fields by joining the Pro Plan',
-=======
+
   'pro_plan_custom_fields' => ':link um durch eine Pro-Mitgliedschaft erweiterte Felder zu aktivieren',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'advanced_settings' => 'Erweiterte Einstellungen',
   'pro_plan_advanced_settings' => ':link um durch eine Pro-Mitgliedschaft erweiterte Einstellungen zu aktivieren',
   'invoice_design' => 'Rechnungsvorlage',
@@ -386,14 +386,14 @@ return array (
   'invoice_options' => 'Rechnungsoptionen',
   'hide_quantity' => 'Menge verbergen',
   'hide_quantity_help' => 'Wenn deine Menge immer 1 beträgt, kannst du deine Rechnung einfach halten, indem du dieses Feld entfernst.',
-<<<<<<< HEAD
+
   'hide_paid_to_date' => 'Bereits gezahlt ausblenden',
   'hide_paid_to_date_help' => 'Bereits gezahlt nur anzeigen, wenn eine Zahlung eingegangen ist.',
-=======
+
   'hide_paid_to_date' => '"Bereits gezahlt" ausblenden',
   'hide_paid_to_date_help' => '"Bereits gezahlt" nur anzeigen, wenn eine Zahlung eingegangen ist.',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'charge_taxes' => 'Steuern erheben',
   'user_management' => 'Benutzerverwaltung',
   'add_user' => 'Add User',
@@ -506,17 +506,17 @@ return array (
   'order_overview' => 'Bestellübersicht',
   'match_address' => '*Die Rechnungsadresse muss mit der Adresse der Kreditkarte übereinstimmen.',
   'click_once' => '*Bitte drücken Sie nur einmal auf "Jetzt bezahlen" - die  Verarbeitung der Transaktion kann bis zu einer Minute dauern.',
-<<<<<<< HEAD
+
   'default_invoice_footer' => 'Standard Fußzeile festlegen',
   'invoice_footer' => 'Fußzeile',
   'save_as_default_footer' => 'Als Standard Fußzeile speichern',
-=======
+
 
   'default_invoice_footer' => 'Standard-Fußzeile festlegen',
   'invoice_footer' => 'Fußzeile',
   'save_as_default_footer' => 'Als Standard-Fußzeile speichern',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'token_management' => 'Token Verwaltung',
   'tokens' => 'Token',
   'add_token' => 'Token hinzufügen',
@@ -548,13 +548,13 @@ return array (
   'recover_password' => 'Passwort wiederherstellen',
   'forgot_password' => 'Passwort vergessen?',
   'email_address' => 'E-Mail-Adresse',
-<<<<<<< HEAD
+
   'lets_go' => 'Auf geht\'s',
   'password_recovery' => 'Passwort Wiederherstellung',
-=======
+
   'lets_go' => "Auf geht's",
   'password_recovery' => 'Passwort-Wiederherstellung',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'send_email' => 'E-Mail verschicken',
   'set_password' => 'Passwort festlegen',
   'converted' => 'Umgewandelt',
@@ -579,12 +579,12 @@ return array (
   'duplicate_post' => 'Achtung: Die vorherige Seite wurde zweimal abgeschickt. Das zweite Abschicken wurde ignoriert.',
   'view_documentation' => 'Dokumentation anzeigen',
   'app_title' => 'Kostenlose Online Open-Source Rechnungsausstellung',
-<<<<<<< HEAD
+
   'app_description' => 'Invoice Ninja is a free, open-source solution for invoicing and billing customers. With Invoice Ninja, you can easily build and send beautiful invoices from any device that has access to the web. Your clients can print your invoices, download them as pdf files, and even pay you online from within the system.',
-=======
+
   'app_description' => 'InvoiceNinja is a free, open-source solution for invoicing and billing customers. With Invoice Ninja, you can easily build and send beautiful invoices from any device that has access to the web. Your clients can print your invoices, download them as pdf files, and even pay you online from within the system.',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'rows' => 'Zeilen',
   'www' => 'www',
   'logo' => 'Logo',
@@ -651,14 +651,14 @@ return array (
   'counter' => 'Zähler',
   'payment_type_dwolla' => 'Dwolla',
   'gateway_help_43' => ':link to sign up for Dwolla.',
-<<<<<<< HEAD
+
   'partial_value' => 'Must be greater than zero and less than the total',
   'more_actions' => 'More Actions',
-=======
+
   'partial_value' => 'Muss größer als Null und kleiner als der Gesamtbetrag sein',
   'more_actions' => 'Weitere Aktionen',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'pro_plan_title' => 'NINJA PRO',
   'pro_plan_call_to_action' => 'Jetzt Upgraden!',
   'pro_plan_feature1' => 'Unlimitierte Anzahl Kunden erstellen',
@@ -684,8 +684,8 @@ return array (
   'unlinked_account' => 'Konten erfolgreich getrennt',
   'login' => 'Login',
   'or' => 'oder',
-<<<<<<< HEAD
-=======
+
+
 
   'email_error' => 'Es gab ein Problem beim Senden dieses E-Mails.',
   'confirm_recurring_timing' => 'Beachten Sie: E-Mails werden zu Beginn der Stunde gesendet.',
@@ -738,5 +738,5 @@ return array (
                         <p>If you need help figuring something out post a question to our <a href="https://www.invoiceninja.com/forums/forum/support/" target="_blank">support forum</a>.</p>'
   
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
 );

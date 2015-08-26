@@ -36,7 +36,7 @@ return array (
   'taxes' => 'Taxes',
   'tax' => 'Tax',
   'item' => 'Item',
-  'description' => 'Description', 
+  'description' => 'Description',
   'unit_cost' => 'Cost',
   'quantity' => 'Quantity',
   'line_total' => 'Line Total',
@@ -108,15 +108,12 @@ return array (
   'active_client' => 'active client',
   'active_clients' => 'active clients',
   'invoices_past_due' => 'Invoices Past Due',
-<<<<<<< HEAD
   'upcoming_invoices' => 'Upcoming invoices',
   'average_invoice' => 'Average invoice',
-=======
   'upcoming_invoices' => 'Upcoming Invoices',
   'average_invoice' => 'Average Invoice',
 
   // list pages
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
   'archive' => 'Archive',
   'delete' => 'Delete',
   'archive_client' => 'Archive client',
@@ -256,7 +253,7 @@ return array (
   'expiration_month' => 'Expiration Month',
   'expiration_year' => 'Expiration Year',
   'cvv' => 'CVV',
-  'security' => 
+  'security' =>
   array (
     'too_many_attempts' => 'Too many attempts. Try again in few minutes.',
     'wrong_credentials' => 'Incorrect email or password.',
@@ -266,7 +263,7 @@ return array (
     'password_reset' => 'Your password has been changed successfully.',
     'wrong_password_reset' => 'Invalid password. Try again',
   ),
-  'pro_plan' => 
+  'pro_plan' =>
   array (
     'remove_logo' => ':link to remove the Invoice Ninja logo by joining the Pro Plan',
     'remove_logo_link' => 'Click here',
@@ -638,8 +635,6 @@ return array (
   'payment_terms_help' => 'Sets the default invoice due date',
   'unlink_account' => 'Unlink Account',
   'unlink' => 'Unlink',
-<<<<<<< HEAD
-=======
   'show_address' => 'Show Address',
   'show_address_help' => 'Require client to provide their billing address',
   'update_address' => 'Update Address',
@@ -683,8 +678,4 @@ return array (
                         <p>You can access any invoice field by adding <code>Value</code> to the end. For example <code>$invoiceNumberValue</code> displays the invoice number.</p>
                         <p>To access a child property using dot notation. For example to show the client name you could use <code>$client.nameValue</code>.</p>
                         <p>If you need help figuring something out post a question to our <a href="https://www.invoiceninja.com/forums/forum/support/" target="_blank">support forum</a>.</p>'
-  
-
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
 );
-

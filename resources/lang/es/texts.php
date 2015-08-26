@@ -102,7 +102,7 @@ return array (
       <li>":YEAR+1 suscripción anual" => "2015 suscripción anual"</li>
       <li>"Retainer payment for :QUARTER+1" => "Pago anticipo de pagos para T2"</li>
    </ul>',
-<<<<<<< HEAD
+
   'in_total_revenue' => 'ingreso total',
   'billed_client' => 'cliente facturado',
   'billed_clients' => 'clientes facturados',
@@ -468,7 +468,7 @@ return array (
   'invoice_footer' => 'Invoice footer',
   'save_as_default_footer' => 'Save as default footer',
   'token_management' => 'Token Management',
-=======
+
 
    // dashboard
    'in_total_revenue' => 'ingreso total',
@@ -871,7 +871,7 @@ return array (
   'save_as_default_footer' => 'Guardar como el pié de página por defecto',
 
   'token_management' => 'Administración de Tokens',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'tokens' => 'Tokens',
   'add_token' => 'Agregar Token',
   'show_deleted_tokens' => 'Mostrar los tokens eliminados',
@@ -881,7 +881,7 @@ return array (
   'edit_token' => 'Editar Token',
   'delete_token' => 'Eliminar Token',
   'token' => 'Token',
-<<<<<<< HEAD
+
   'add_gateway' => 'Add Gateway',
   'delete_gateway' => 'Delete Gateway',
   'edit_gateway' => 'Edit Gateway',
@@ -932,7 +932,7 @@ return array (
   'app_title' => 'Free Open-Source Online Invoicing',
   'app_description' => 'Invoice Ninja is a free, open-source solution for invoicing and billing customers. With Invoice Ninja, you can easily build and send beautiful invoices from any device that has access to the web. Your clients can print your invoices, download them as pdf files, and even pay you online from within the system.',
   'rows' => 'rows',
-=======
+
 
   'add_gateway' => 'Agregar Gateway',
   'delete_gateway' => 'Eliminar Gateway',
@@ -989,7 +989,7 @@ return array (
   'app_description' => 'Invoice Ninja es una solución open-source gratuita para manejar la facturación de sus clientes. Con Invoice Ninja, se pueden crear y enviar hermosas facturas desde cualquier dispositivo que tenga acceso a Internet. Sus clientes pueden imprimir sus facturas, descargarlas en formato PDF o inclusive pagarlas en linea desde esta misma plataforma',
   
   'rows' => 'filas',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'www' => 'www',
   'logo' => 'Logo',
   'subdomain' => 'Subdominio',
@@ -1006,7 +1006,7 @@ return array (
   'export' => 'Exportar',
   'documentation' => 'Documentación',
   'zapier' => 'Zapier <sup>Beta</sup>',
-<<<<<<< HEAD
+
   'recurring' => 'Recurring',
   'last_invoice_sent' => 'Last invoice sent :date',
   'processed_updates' => 'Successfully completed update',
@@ -1084,7 +1084,7 @@ return array (
   'login' => 'Login',
   'or' => 'or',
 );
-=======
+
   'recurring' => 'Recurrente',
   'last_invoice_sent' => 'Ultima factura enviada en :date',
 
@@ -1227,4 +1227,4 @@ return array (
 
 
 );
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+

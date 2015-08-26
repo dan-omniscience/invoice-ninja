@@ -27,13 +27,11 @@ class HandleUserSettingsChanged {
 	 */
 	public function handle(UserSettingsChanged $event)
 	{
-        if (Auth::check()) {
-            $account = Auth::user()->account;
-            $account->loadLocalizationSettings();
+        $account = Auth::user()->account;
+        $account->loadLocalizationSettings();
 
-            $users = $this->accountRepo->loadAccounts(Auth::user()->id);
-            Session::put(SESSION_USER_ACCOUNTS, $users);
-        }
+        $users = $this->accountRepo->loadAccounts(Auth::user()->id);
+        Session::put(SESSION_USER_ACCOUNTS, $users);
 	}
 
 }

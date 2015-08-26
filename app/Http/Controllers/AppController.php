@@ -34,7 +34,7 @@ class AppController extends BaseController
 
     public function showSetup()
     {
-        if (Utils::isNinjaProd() || (Utils::isDatabaseSetup() && Account::count() > 0)) {
+        if (Utils::isNinja() || (Utils::isDatabaseSetup() && Account::count() > 0)) {
             return Redirect::to('/');
         }
 
@@ -43,7 +43,7 @@ class AppController extends BaseController
 
     public function doSetup()
     {
-        if (Utils::isNinjaProd() || (Utils::isDatabaseSetup() && Account::count() > 0)) {
+        if (Utils::isNinja() || (Utils::isDatabaseSetup() && Account::count() > 0)) {
             return Redirect::to('/');
         }
 
@@ -88,7 +88,7 @@ class AppController extends BaseController
                     "MAIL_HOST={$mail['host']}\n".
                     "MAIL_USERNAME={$mail['username']}\n".
                     "MAIL_FROM_NAME={$mail['from']['name']}\n".
-                    "MAIL_PASSWORD={$mail['password']}";
+                    "MAIL_PASSWORD={$mail['password']}\n";
 
         // Write Config Settings
         $fp = fopen(base_path()."/.env", 'w');
@@ -159,7 +159,7 @@ class AppController extends BaseController
 
     public function install()
     {
-        if (!Utils::isNinjaProd() && !Utils::isDatabaseSetup()) {
+        if (!Utils::isNinja() && !Utils::isDatabaseSetup()) {
             try {
                 Artisan::call('migrate', array('--force' => true));
                 if (Industry::count() == 0) {
@@ -176,7 +176,7 @@ class AppController extends BaseController
 
     public function update()
     {
-        if (!Utils::isNinjaProd()) {
+        if (!Utils::isNinja()) {
             try {
                 Artisan::call('migrate', array('--force' => true));
                 Artisan::call('db:seed', array('--force' => true, '--class' => 'PaymentLibrariesSeeder'));

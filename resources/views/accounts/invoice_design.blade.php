@@ -3,10 +3,13 @@
 @section('head')
 	@parent
 
-		<script src="{{ asset('js/pdf_viewer.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('js/compatibility.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/pdfmake.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/vfs_fonts.js') }}" type="text/javascript"></script>
+		<script src="{!! asset('js/pdf_viewer.js') !!}" type="text/javascript"></script>
+		<script src="{!! asset('js/compatibility.js') !!}" type="text/javascript"></script>
+
+        @if (Auth::user()->account->utf8_invoices)
+            <script src="{{ asset('js/pdfmake.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('js/vfs_fonts.js') }}" type="text/javascript"></script>
+        @endif
 
 @stop
 
@@ -24,9 +27,8 @@
         showMoreDesigns(); 
         $('#invoice_design_id').val(1);
         return invoiceDesigns[0].javascript;        
-      } else {        
-        var design = _.find(invoiceDesigns, function(design){ return design.id == id});
-        return design ? design.javascript : '';
+      } else {
+        return invoiceDesigns[id-1].javascript;
       }
     }
 
@@ -53,7 +55,8 @@
         }
       }      
 
-      generatePDF(invoice, getDesignJavascript(), true, cb);      
+      doc = generatePDF(invoice, getDesignJavascript(), true);
+      doc.getDataUrl(cb);
     }
 
     $(function() {   
@@ -93,19 +96,18 @@
         <div class="panel-body">    
 
 
-          @if (!Utils::isPro() || \App\Models\InvoiceDesign::count() == COUNT_FREE_DESIGNS_SELF_HOST)
+          @if (!Utils::isPro() || \App\Models\InvoiceDesign::count() == COUNT_FREE_DESIGNS)      
             {!! Former::select('invoice_design_id')->style('display:inline;width:120px')->fromQuery($invoiceDesigns, 'name', 'id')->addOption(trans('texts.more_designs') . '...', '-1') !!}
           @else 
             {!! Former::select('invoice_design_id')->style('display:inline;width:120px')->fromQuery($invoiceDesigns, 'name', 'id') !!}
           @endif
 
-          {!! Former::text('font_size')->type('number')->min('0')->step('1')->style('width:120px') !!}
+          @if (Auth::user()->account->utf8_invoices)
+            {!! Former::text('font_size')->type('number')->min('0')->step('1')->style('width:120px') !!}
+          @endif          
+
           {!! Former::text('primary_color') !!}
           {!! Former::text('secondary_color') !!}
-
-          {!! Former::actions( 
-                Button::primary(trans('texts.customize_design'))->small()->asLinkTo(URL::to('/company/advanced_settings/customize_design'))
-            ) !!}
 
           </div>
       </div>

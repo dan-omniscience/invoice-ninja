@@ -3,7 +3,6 @@
 use Auth;
 use Cache;
 use DB;
-use App;
 use Schema;
 use Session;
 use Request;
@@ -62,17 +61,12 @@ class Utils
 
     public static function allowNewAccounts()
     {
-        return Utils::isNinja() || Auth::check();
+        return Utils::isNinja() || (isset($_ENV['ALLOW_NEW_ACCOUNTS']) && $_ENV['ALLOW_NEW_ACCOUNTS'] == 'true');
     }
 
     public static function isPro()
     {
         return Auth::check() && Auth::user()->isPro();
-    }
-
-    public static function isEnglish()
-    {
-        return App::getLocale() == 'en';
     }
 
     public static function getUserType()
@@ -257,10 +251,6 @@ class Utils
             $currency = Currency::find(1);
         }
 
-        if (!$value) {
-            $value = 0;
-        }
-
         Cache::add('currency', $currency, DEFAULT_QUERY_CACHE);
 
         return $currency->symbol.number_format($value, $currency->precision, $currency->decimal_separator, $currency->thousand_separator);
@@ -325,27 +315,16 @@ class Utils
         return $date->format($format);
     }
 
-    public static function getTiemstampOffset()
-    {
-        $timezone = new DateTimeZone(Session::get(SESSION_TIMEZONE, DEFAULT_TIMEZONE));
-        $datetime = new DateTime('now', $timezone);
-        $offset = $timezone->getOffset($datetime);
-        $minutes = $offset / 60;
-
-        return $minutes;
-    }
-
     public static function toSqlDate($date, $formatResult = true)
     {
         if (!$date) {
             return;
         }
 
-        //$timezone = Session::get(SESSION_TIMEZONE, DEFAULT_TIMEZONE);
+        $timezone = Session::get(SESSION_TIMEZONE, DEFAULT_TIMEZONE);
         $format = Session::get(SESSION_DATE_FORMAT, DEFAULT_DATE_FORMAT);
 
-        //$dateTime = DateTime::createFromFormat($format, $date, new DateTimeZone($timezone));
-        $dateTime = DateTime::createFromFormat($format, $date);
+        $dateTime = DateTime::createFromFormat($format, $date, new DateTimeZone($timezone));
 
         return $formatResult ? $dateTime->format('Y-m-d') : $dateTime;
     }
@@ -356,11 +335,11 @@ class Utils
             return '';
         }
 
-        //$timezone = Session::get(SESSION_TIMEZONE, DEFAULT_TIMEZONE);
+        $timezone = Session::get(SESSION_TIMEZONE, DEFAULT_TIMEZONE);
         $format = Session::get(SESSION_DATE_FORMAT, DEFAULT_DATE_FORMAT);
 
         $dateTime = DateTime::createFromFormat('Y-m-d', $date);
-        //$dateTime->setTimeZone(new DateTimeZone($timezone));
+        $dateTime->setTimeZone(new DateTimeZone($timezone));
 
         return $formatResult ? $dateTime->format($format) : $dateTime;
     }
@@ -407,12 +386,10 @@ class Utils
         }
 
         $object = new stdClass();
-        $object->accountId = Auth::user()->account_id;
         $object->url = $url;
         $object->name = ucwords($type).': '.$name;
 
         $data = [];
-        $counts = [];
 
         for ($i = 0; $i<count($viewed); $i++) {
             $item = $viewed[$i];
@@ -421,22 +398,12 @@ class Utils
                 continue;
             }
 
-            // temporary fix to check for new property in session
-            if (!property_exists($item, 'accountId')) {
-                continue;
-            }
-
             array_unshift($data, $item);
-            if (isset($counts[$item->accountId])) {
-                $counts[$item->accountId]++;
-            } else {
-                $counts[$item->accountId] = 1;
-            }
         }
 
         array_unshift($data, $object);
-        
-        if (isset($counts[Auth::user()->account_id]) && $counts[Auth::user()->account_id] > RECENTLY_VIEWED_LIMIT) {
+
+        if (count($data) > RECENTLY_VIEWED_LIMIT) {
             array_pop($data);
         }
 
@@ -709,38 +676,5 @@ class Utils
         }
 
         fwrite($output, "\n");
-    }
-    
-    public static function stringToObjectResolution($baseObject, $rawPath)
-    {
-        $val = '';
-        
-        if (!is_object($baseObject)) {
-          return $val;
-        }
-        
-        $path = preg_split('/->/', $rawPath);
-        $node = $baseObject;
-        
-        while (($prop = array_shift($path)) !== null) {
-            if (property_exists($node, $prop)) {
-                $val = $node->$prop;
-                $node = $node->$prop;
-            } else if (is_object($node) && isset($node->$prop)) {
-                $node = $node->{$prop};
-            } else if ( method_exists($node, $prop)) {
-                $val = call_user_func(array($node, $prop));
-            }
-        }
-        
-        return $val;
-    }
-
-    public static function getFirst($values) {
-        if (is_array($values)) {
-            return count($values) ? $values[0] : false;
-        } else {
-            return $values;
-        }
     }
 }

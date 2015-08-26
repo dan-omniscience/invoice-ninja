@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ App::getLocale() }}">
-<head>
-  <meta charset="utf-8">
-</head>
+<html>
 <body>
     @if (false)
         @include('emails.view_action', ['link' => $link, 'entityType' => $entityType])

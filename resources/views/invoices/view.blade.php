@@ -7,8 +7,11 @@
 		
 		<script src="{{ asset('js/pdf_viewer.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('js/compatibility.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/pdfmake.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/vfs_fonts.js') }}" type="text/javascript"></script>
+
+        @if ($invoice->client->account->utf8_invoices)
+            <script src="{{ asset('js/pdfmake.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('js/vfs_fonts.js') }}" type="text/javascript"></script>
+        @endif
 
 		<style type="text/css">
 			body {
@@ -50,7 +53,8 @@
 			invoice.contact = {!! $contact->toJson() !!};
 
 			function getPDFString(cb) {
-    	  	    generatePDF(invoice, invoice.invoice_design.javascript, true, cb);
+    	  	    doc = generatePDF(invoice, invoice.invoice_design.javascript);
+                doc.getDataUrl(cb);
 			}
 
 			$(function() {

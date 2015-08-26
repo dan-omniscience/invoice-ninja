@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ App::getLocale() }}">
-<head>
-  <meta charset="utf-8">
-</head>
-<body>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
 
-  {{ $client }},<p/>
+      {{ $client }},<p/>
 
-  {{ trans('texts.payment_message', ['amount' => $amount]) }}<p/>      
+      {{ trans('texts.payment_message', ['amount' => $amount]) }}<p/>      
 
-  {{ $license }}<p/>
+      {{ $license }}<p/>
 
-  {{ trans('texts.email_signature') }}<br/>      
-  {{ $account }}
-  
-</body>
+      {{ trans('texts.email_signature') }}<br/>      
+      {{ $account }}
+      
+    </body>
 </html>

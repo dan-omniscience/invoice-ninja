@@ -286,7 +286,7 @@ return array (
   'edit' => 'Bewerk',
   'view_invoice' => 'Bekijk Factuur',
   'view_as_recipient' => 'Bekijk als ontvanger',
-<<<<<<< HEAD
+
   'product_library' => 'Product Library',
   'product' => 'Product',
   'products' => 'Products',
@@ -301,7 +301,7 @@ return array (
   'created_product' => 'Successfully created product',
   'archived_product' => 'Successfully archived product',
   'pro_plan_custom_fields' => ':link to enable custom fields by joining the Pro Plan',
-=======
+
 
   // product management
   'product_library' => 'Product Bibliotheek',
@@ -319,18 +319,18 @@ return array (
   'archived_product' => 'Product Succesvol gearchiveerd',
   'pro_plan_custom_fields' => ':link om aangepaste velden in te schakelen door het Pro Plan te nemen',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'advanced_settings' => 'Geavanceerde instellingen',
   'pro_plan_advanced_settings' => ':link om de geavanceerde instellingen te activeren door het Pro Plan te nemen',
   'invoice_design' => 'Factuur ontwerp',
   'specify_colors' => 'Kies kleuren',
   'specify_colors_label' => 'Kies de kleuren die in de factuur gebruikt worden',
-<<<<<<< HEAD
+
   'chart_builder' => 'Chart Builder',
-=======
+
 
   'chart_builder' => 'Grafiek bouwer',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'ninja_email_footer' => 'Gebruik :site om uw klanten gratis te factureren en betalingen te ontvangen!',
   'go_pro' => 'Go Pro',
   'quote' => 'Offerte',
@@ -373,16 +373,16 @@ return array (
   'invoice_fields' => 'Factuur Velden',
   'invoice_options' => 'Factuur Opties',
   'hide_quantity' => 'Verberg aantallen',
-<<<<<<< HEAD
+
   'hide_quantity_help' => 'Als us artikel-aantallen altijd 1 zijn, kunt u uw facturen er netter uit laten zien door dit veld te verbergen.',
   'hide_paid_to_date' => 'Hide paid to date',
   'hide_paid_to_date_help' => 'Only display the "Paid to Date" area on your invoices once a payment has been received.',
-=======
+
   'hide_quantity_help' => 'Als de artikel-aantallen altijd 1 zijn, kunt u uw facturen netter maken door dit veld te verbergen.',
   'hide_paid_to_date' => 'Verberg "Reeds betaald"',
   'hide_paid_to_date_help' => 'Toon alleen het "Reeds betaald" gebied op je facturen als er een betaling gemaakt is.',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'charge_taxes' => 'Charge taxes',
   'user_management' => 'Gebruikersbeheer',
   'add_user' => 'Nieuwe gebruiker',
@@ -416,14 +416,14 @@ return array (
   'share_invoice_counter' => 'Deel factuur teller',
   'invoice_issued_to' => 'Factuur uitgegeven aan',
   'invalid_counter' => 'Stel een factuurnummer prefix of offertenummer prefix in om een mogelijk conflict te voorkomen.',
-<<<<<<< HEAD
+
   'mark_sent' => 'Markeer als verzonden',
   'gateway_help_1' => ':link to sign up for Authorize.net.',
   'gateway_help_2' => ':link to sign up for Authorize.net.',
   'gateway_help_17' => ':link to get your PayPal API signature.',
   'gateway_help_23' => 'Note: use your secret API key, not your publishable API key.',
   'gateway_help_27' => ':link to sign up for TwoCheckout.',
-=======
+
   'mark_sent' => 'Markeer als verzonden',    
   
 
@@ -433,7 +433,7 @@ return array (
   'gateway_help_23' => 'Opmerking: gebruik je gehieme API key, niet je publiceerbare API key.',
   'gateway_help_27' => ':link om in te schrijven voor TwoCheckout.',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'more_designs' => 'Meer ontwerpen',
   'more_designs_title' => 'Aanvullende Factuur Ontwerpen',
   'more_designs_cloud_header' => 'Neem Pro Plan voor meer factuur ontwerpen',
@@ -444,14 +444,14 @@ return array (
   'bought_designs' => 'Aanvullende factuurontwerpen succesvol toegevoegd',
   'sent' => 'verzonden',
   'timesheets' => 'Timesheets',
-<<<<<<< HEAD
+
   'payment_title' => 'Enter Your Billing Address and Credit Card information',
   'payment_cvv' => '*This is the 3-4 digit number onthe back of your card',
   'payment_footer1' => '*Billing address must match address associated with credit card.',
   'payment_footer2' => '*Please click "PAY NOW" only once - transaction may take up to 1 minute to process.',
   'vat_number' => 'Vat Number',
   'id_number' => 'ID Number',
-=======
+
 
   'payment_title' => 'Geef je betalingsadres en kredietkaart gegevens op',
   'payment_cvv' => '*Dit is de code van 3-4 tekens op de achterkant van je kaart',
@@ -460,7 +460,7 @@ return array (
   'vat_number' => 'BTW Nummer',
   'id_number' => 'ID Nummer',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'white_label_link' => 'White label',
   'white_label_text' => 'Koop een white label licentie voor $20 om de Invoice Ninja merknaam te verwijderen uit de bovenkant van de klantenpagina\'s.',
   'white_label_header' => 'White Label',
@@ -497,7 +497,7 @@ return array (
   'quote_email' => 'Offerte Email',
   'reset_all' => 'Reset Alles',
   'approve' => 'Goedkeuren',
-<<<<<<< HEAD
+
   'token_billing_type_id' => 'Token Billing',
   'token_billing_help' => 'Enables you to store credit cards with your gateway, and charge them at a later date.',
   'token_billing_1' => 'Disabled',
@@ -510,7 +510,7 @@ return array (
   'edit_payment_details' => 'Edit payment details',
   'token_billing' => 'Save card details',
   'token_billing_secure' => 'The data is stored securely by :stripe_link',
-=======
+
 
   'token_billing_type_id' => 'Betalingstoken',
   'token_billing_help' => 'Laat je toe om kredietkaart gegevens bij je gateway op te slaan en ze later te gebruiken.',
@@ -525,7 +525,7 @@ return array (
   'token_billing' => 'Kaartgegevens opslaan',
   'token_billing_secure' => 'De gegevens zijn succesvol veilig opgeslaan door :stripe_link',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'support' => 'Ondersteuning',
   'contact_information' => 'Contact informatie',
   '256_encryption' => '256-Bit Encryptie',
@@ -548,7 +548,7 @@ return array (
   'edit_token' => 'Bewerk Token',
   'delete_token' => 'Verwijder Token',
   'token' => 'Token',
-<<<<<<< HEAD
+
   'add_gateway' => 'Add Gateway',
   'delete_gateway' => 'Delete Gateway',
   'edit_gateway' => 'Edit Gateway',
@@ -557,7 +557,7 @@ return array (
   'deleted_gateway' => 'Successfully deleted gateway',
   'pay_with_paypal' => 'PayPal',
   'pay_with_card' => 'Credit card',
-=======
+
 
   'add_gateway' => 'Gateway Toevoegen',
   'delete_gateway' => 'Gateway Verwijderen',
@@ -568,7 +568,7 @@ return array (
   'pay_with_paypal' => 'PayPal',
   'pay_with_card' => 'Kredietkaart',
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'change_password' => 'Verander wachtwoord',
   'current_password' => 'Huidig wachtwoord',
   'new_password' => 'Nieuw wachtwoord',
@@ -587,7 +587,7 @@ return array (
   'send_email' => 'Verstuur email',
   'set_password' => 'Stel wachtwoord in',
   'converted' => 'Omgezet',
-<<<<<<< HEAD
+
   'email_approved' => 'Email me when a quote is <b>approved</b>',
   'notification_quote_approved_subject' => 'Quote :invoice was approved by :client',
   'notification_quote_approved' => 'The following client :client approved Quote :invoice for :amount.',
@@ -612,7 +612,7 @@ return array (
   'app_title' => 'Free Open-Source Online Invoicing',
   'app_description' => 'Invoice Ninja is a free, open-source solution for invoicing and billing customers. With Invoice Ninja, you can easily build and send beautiful invoices from any device that has access to the web. Your clients can print your invoices, download them as pdf files, and even pay you online from within the system.',
   'rows' => 'rows',
-=======
+
 
   'email_approved' => 'Email me wanneer een offerte is <b>goedgekeurd</b>',
   'notification_quote_approved_subject' => 'Offerte :invoice is goedgekeurd door :client',
@@ -640,7 +640,7 @@ return array (
   'app_description' => 'Invoice Ninja is een gratis, open-source oplossing voor het aanmkaen en versturen van facturen aan klanten. Met Invoice Ninja, kan je gemakkelijk mooie facturen aanmaken en verzenden van om het even welk toestel met internettoegang. Je klanten kunnen je facturen afprinten, downloaden als pdf bestanden, en je zelfs online betalen vanuit het systeem.',
   
   'rows' => 'rijen',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'www' => 'www',
   'logo' => 'Logo',
   'subdomain' => 'Subdomein',
@@ -657,7 +657,7 @@ return array (
   'export' => 'Exporteer',
   'documentation' => 'Documentatie',
   'zapier' => 'Zapier <sup>Beta</sup>',
-<<<<<<< HEAD
+
   'recurring' => 'Recurring',
   'last_invoice_sent' => 'Last invoice sent :date',
   'processed_updates' => 'Successfully completed update',
@@ -672,7 +672,7 @@ return array (
   'delete_task' => 'Delete Task',
   'stop_task' => 'Stop Task',
   'time' => 'Time',
-=======
+
   'recurring' => 'Terugkerend',
   'last_invoice_sent' => 'Laatste factuur verzonden :date',
 
@@ -688,7 +688,7 @@ return array (
   'delete_task' => 'Verwijder Taak',
   'stop_task' => 'Stop Taak',
   'time' => 'Tijd',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'start' => 'Start',
   'stop' => 'Stop',
   'now' => 'Nu',
@@ -696,7 +696,7 @@ return array (
   'manual' => 'Manueel',
   'date_and_time' => 'Datum & Tijd',
   'second' => 'second',
-<<<<<<< HEAD
+
   'seconds' => 'seconds',
   'minute' => 'minute',
   'minutes' => 'minutes',
@@ -752,7 +752,7 @@ return array (
   'unlinked_account' => 'Successfully unlinked accounts',
   'login' => 'Login',
   'or' => 'or',
-=======
+
   'seconds' => 'seconden',
   'minute' => 'minuut',
   'minutes' => 'minuten',
@@ -865,5 +865,5 @@ return array (
   
 
   
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
 );

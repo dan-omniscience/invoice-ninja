@@ -1,6 +1,6 @@
-/* =============================================================
+/* =====
  * bootstrap-combobox.js v1.1.5
- * =============================================================
+ * =====
  * Copyright 2012 Daniel Farrell
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +14,14 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ============================================================ */
+ * ==== */
 
 !function( $ ) {
 
  "use strict";
 
  /* COMBOBOX PUBLIC CLASS DEFINITION
-  * ================================ */
+  * ==== */
 
   var Combobox = function ( element, options ) {
     this.options = $.extend({}, $.fn.combobox.defaults, options);
@@ -396,7 +396,7 @@
   };
 
   /* COMBOBOX PLUGIN DEFINITION
-   * =========================== */
+   * ====== */
 
   $.fn.combobox = function ( option ) {
     return this.each(function () {

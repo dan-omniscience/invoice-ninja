@@ -110,11 +110,11 @@ return array (
   'invoices_past_due' => 'Date limite de paiement dépassée',
   'upcoming_invoices' => 'Factures à venir',
   'average_invoice' => 'Moyenne de facturation',
-<<<<<<< HEAD
-=======
+
+
 
   // list pages
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'archive' => 'Archiver',
   'delete' => 'Supprimer',
   'archive_client' => 'Archiver ce client',
@@ -268,18 +268,18 @@ return array (
   array (
     'remove_logo' => ':link pour supprimer le logo Invoice Ninja en souscrivant au Plan Pro',
     'remove_logo_link' => 'Cliquez ici',
-<<<<<<< HEAD
+
   ),
   'logout' => 'Se déconnecter',
   'sign_up_to_save' => 'Connectez vous pour sauvegarder votre travail',
   'agree_to_terms' => 'J\'accepte les conditions d\'utilisation d\'Invoice ninja :terms',
-=======
+
   ],
 
   'logout' => 'Se déconnecter',
   'sign_up_to_save' => 'Connectez vous pour sauvegarder votre travail',
   'agree_to_terms' =>'J\'accepte les conditions d\'utilisation d\'Invoice ninja :terms',
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'terms_of_service' => 'Conditions d\'utilisation',
   'email_taken' => 'L\'adresse courriel existe déjà',
   'working' => 'En cours',
@@ -298,11 +298,11 @@ return array (
   'field_value' => 'Valeur du champ',
   'edit' => 'Éditer',
   'view_as_recipient' => 'Voir en tant que destinataire',
-<<<<<<< HEAD
-=======
+
+
 
   // product management
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
   'product_library' => 'Inventaire',
   'product' => 'Produit',
   'products' => 'Produits',
@@ -362,10 +362,10 @@ return array (
   'notification_quote_viewed_subject' => 'Le devis :invoice a été visionné par :client',
   'notification_quote_sent' => 'Le devis :invoice de :amount a été envoyé au client :client.',
   'notification_quote_viewed' => 'Le devis :invoice de :amount a été visioné par le client :client.',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'session_expired' => 'Votre session a expiré.',
   'invoice_fields' => 'Champs de facture',
   'invoice_options' => 'Options de facturation',
@@ -398,11 +398,11 @@ return array (
   'sample_data' => 'Données fictives présentées',
   'hide' => 'Cacher',
   'new_version_available' => 'Une nouvelle version de :releases_link est disponible. Vous utilisez v:user_version, la plus récente est v:latest_version',
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'invoice_settings' => 'Paramètres des factures',
   'invoice_number_prefix' => 'Préfixe du numéro de facture',
   'invoice_number_counter' => 'Compteur du numéro de facture',
@@ -412,10 +412,10 @@ return array (
   'invoice_issued_to' => 'Facture destinée à',
   'invalid_counter' => 'Pour éviter un éventuel conflit, merci de définir un préfixe pour le numéro de facture ou pour le numéro de devis',
   'mark_sent' => 'Marquer comme envoyé',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'gateway_help_1' => ':link to sign up for Authorize.net.',
   'gateway_help_2' => ':link to sign up for Authorize.net.',
   'gateway_help_17' => ':link to get your PayPal API signature.',
@@ -429,10 +429,10 @@ return array (
   'more_designs_self_host_text' => '',
   'buy' => 'Acheter',
   'bought_designs' => 'Les nouveaux modèles ont été ajoutés avec succès',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'sent' => 'envoyé',
   'timesheets' => 'Feuilles de temps',
   'payment_title' => 'Entrez votre adresse de facturation et vos informations bancaires',
@@ -440,10 +440,10 @@ return array (
   'payment_footer1' => '*L\'adresse de facturation doit correspondre à celle enregistrée avec votre carte bancaire',
   'payment_footer2' => '*Merci de cliquer sur "Payer maintenant" une seule fois. Le processus peut prendre jusqu\'à 1 minute.',
   'vat_number' => 'Numéro de TVA',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'id_number' => 'Numéro ID',
   'white_label_link' => 'Marque blanche',
   'white_label_text' => 'Pour retirer la marque Invoice Ninja en haut de la page client, achetez un licence en marque blanche de 20$.',
@@ -464,10 +464,10 @@ return array (
   'reason_for_canceling' => 'Aidez nous à améliorer notre site en nous disant pourquoi vous partez.',
   'discount_percent' => 'Pourcent',
   'discount_amount' => 'Montant',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'invoice_history' => 'Historique des factures',
   'quote_history' => 'Historique des devis',
   'current_version' => 'Version courante',
@@ -485,10 +485,10 @@ return array (
   'quote_email' => 'Email de déclaration',
   'reset_all' => 'Réinitialiser',
   'approve' => 'Accepter',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'token_billing_type_id' => 'Token Billing',
   'token_billing_help' => 'Enables you to store credit cards with your gateway, and charge them at a later date.',
   'token_billing_1' => 'Disabled',
@@ -510,10 +510,10 @@ return array (
   'order_overview' => 'Order overview',
   'match_address' => '*Address must match address associated with credit card.',
   'click_once' => '*Please click "PAY NOW" only once - transaction may take up to 1 minute to process.',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'default_invoice_footer' => 'Définir par défaut',
   'invoice_footer' => 'Pied de facture',
   'save_as_default_footer' => 'Définir comme pied de facture par défatu',
@@ -558,10 +558,10 @@ return array (
   'notification_quote_approved' => 'The following client :client approved Quote :invoice for :amount.',
   'resend_confirmation' => 'Resend confirmation email',
   'confirmation_resent' => 'The confirmation email was resent',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'gateway_help_42' => ':link to sign up for BitPay.<br/>Note: use a Legacy API Key, not an API token.',
   'payment_type_credit_card' => 'Carte de crédit',
   'payment_type_paypal' => 'PayPal',
@@ -569,10 +569,10 @@ return array (
   'knowledge_base' => 'Base de connaissances',
   'partial' => 'Partiel',
   'partial_remaining' => ':partial de :balance',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'more_fields' => 'Plus de champs',
   'less_fields' => 'Moins de champs',
   'client_name' => 'Nom du client',
@@ -583,10 +583,10 @@ return array (
   'view_documentation' => 'Voir documentation',
   'app_title' => 'Free Open-Source Online Invoicing',
   'app_description' => 'Invoice Ninja is a free, open-source solution for invoicing and billing customers. With Invoice Ninja, you can easily build and send beautiful invoices from any device that has access to the web. Your clients can print your invoices, download them as pdf files, and even pay you online from within the system.',
-<<<<<<< HEAD
-=======
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
+
+
   'rows' => 'lignes',
   'www' => 'www',
   'logo' => 'Logo',
@@ -680,8 +680,8 @@ return array (
   'unlinked_account' => 'Successfully unlinked accounts',
   'login' => 'Connexion',
   'or' => 'ou',
-<<<<<<< HEAD
-=======
+
+
 
   'email_error' => 'There was a problem sending the email',
   'confirm_recurring_timing' => 'Note: emails are sent at the start of the hour.',
@@ -735,5 +735,5 @@ return array (
   
 
 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
 );

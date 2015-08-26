@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 return array (
@@ -627,7 +627,7 @@ return array (
   'login' => 'Login',
   'or' => 'or',
 );
-=======
+
  <?php 
   
  return array( 
@@ -1387,4 +1387,4 @@ return array (
   
 
  ); 
->>>>>>> c88fb2852b9c3bc625ff93bdd3332eed82cd1f0b
+
