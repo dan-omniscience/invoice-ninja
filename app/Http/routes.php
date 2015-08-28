@@ -26,6 +26,13 @@ Route::post('setup', 'AppController@doSetup');
 Route::get('install', 'AppController@install');
 Route::get('update', 'AppController@update');
 
+/*
+// Codeception code coverage
+Route::get('/c3.php', function () {
+    include '../c3.php';
+});
+*/
+
 // Public pages
 Route::get('/', 'HomeController@showIndex');
 Route::get('terms', 'HomeController@showTerms');
@@ -95,6 +102,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('users/change_password', 'UserController@changePassword');
     Route::get('/switch_account/{user_id}', 'UserController@switchAccount');
     Route::get('/unlink_account/{user_account_id}/{user_id}', 'UserController@unlinkAccount');
+    Route::get('/manage_companies', 'UserController@manageCompanies');
 
     Route::get('api/tokens', array('as'=>'api.tokens', 'uses'=>'TokenController@getDatatable'));
     Route::resource('tokens', 'TokenController');
@@ -130,7 +138,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('tasks/create/{client_id?}', 'TaskController@create');
     Route::post('tasks/bulk', 'TaskController@bulk');
 
-    Route::get('recurring_invoices', 'InvoiceController@recurringIndex');
     Route::get('api/recurring_invoices/{client_id?}', array('as'=>'api.recurring_invoices', 'uses'=>'InvoiceController@getRecurringDatatable'));
 
     Route::get('invoices/invoice_history/{invoice_id}', 'InvoiceController@invoiceHistory');
@@ -139,6 +146,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('invoices', 'InvoiceController');
     Route::get('api/invoices/{client_id?}', array('as'=>'api.invoices', 'uses'=>'InvoiceController@getDatatable'));
     Route::get('invoices/create/{client_id?}', 'InvoiceController@create');
+    Route::get('recurring_invoices/create/{client_id?}', 'InvoiceController@createRecurring');
     Route::get('invoices/{public_id}/clone', 'InvoiceController@cloneInvoice');
     Route::post('invoices/bulk', 'InvoiceController@bulk');
 
@@ -246,6 +254,8 @@ define('ACCOUNT_USER_MANAGEMENT', 'user_management');
 define('ACCOUNT_DATA_VISUALIZATIONS', 'data_visualizations');
 define('ACCOUNT_EMAIL_TEMPLATES', 'email_templates');
 define('ACCOUNT_TOKEN_MANAGEMENT', 'token_management');
+define('ACCOUNT_CUSTOMIZE_DESIGN', 'customize_design');
+
 
 define('ACTIVITY_TYPE_CREATE_CLIENT', 1);
 define('ACTIVITY_TYPE_ARCHIVE_CLIENT', 2);
@@ -299,6 +309,7 @@ define('INVOICE_STATUS_PARTIAL', 4);
 define('INVOICE_STATUS_PAID', 5);
 
 define('PAYMENT_TYPE_CREDIT', 1);
+define('CUSTOM_DESIGN', 11);
 
 define('FREQUENCY_WEEKLY', 1);
 define('FREQUENCY_TWO_WEEKS', 2);
@@ -322,6 +333,7 @@ define('SESSION_LAST_REQUEST_TIME', 'SESSION_LAST_REQUEST_TIME');
 
 define('DEFAULT_TIMEZONE', 'US/Eastern');
 define('DEFAULT_CURRENCY', 1); // US Dollar
+define('DEFAULT_LANGUAGE', 1); // English
 define('DEFAULT_DATE_FORMAT', 'M j, Y');
 define('DEFAULT_DATE_PICKER_FORMAT', 'M d, yyyy');
 define('DEFAULT_DATETIME_FORMAT', 'F j, Y, g:i a');
@@ -360,14 +372,17 @@ define('NINJA_GATEWAY_ID', GATEWAY_STRIPE);
 define('NINJA_GATEWAY_CONFIG', '');
 define('NINJA_WEB_URL', 'https://www.invoiceninja.com');
 define('NINJA_APP_URL', 'https://app.invoiceninja.com');
-define('NINJA_VERSION', '2.2.2');
+define('NINJA_VERSION', '2.3.3');
 define('NINJA_DATE', '2000-01-01');
+
 define('NINJA_FROM_EMAIL', 'maildelivery@invoiceninja.com');
 define('RELEASES_URL', 'https://github.com/hillelcoren/invoice-ninja/releases/');
 define('ZAPIER_URL', 'https://zapier.com/developer/invite/11276/85cf0ee4beae8e802c6c579eb4e351f1/');
 define('OUTDATE_BROWSER_URL', 'http://browsehappy.com/');
+define('PDFMAKE_DOCS', 'http://pdfmake.org/playground.html');
 
 define('COUNT_FREE_DESIGNS', 4);
+define('COUNT_FREE_DESIGNS_SELF_HOST', 5); // include the custom design
 define('PRODUCT_ONE_CLICK_INSTALL', 1);
 define('PRODUCT_INVOICE_DESIGNS', 2);
 define('PRODUCT_WHITE_LABEL', 3);
@@ -384,6 +399,9 @@ define('USER_TYPE_SELF_HOST', 'SELF_HOST');
 define('USER_TYPE_CLOUD_HOST', 'CLOUD_HOST');
 define('NEW_VERSION_AVAILABLE', 'NEW_VERSION_AVAILABLE');
 
+define('TEST_USERNAME', 'user@email.com');
+define('TEST_PASSWORD', 'password');
+
 define('TOKEN_BILLING_DISABLED', 1);
 define('TOKEN_BILLING_OPT_IN', 2);
 define('TOKEN_BILLING_OPT_OUT', 3);
@@ -395,14 +413,6 @@ define('PAYMENT_TYPE_BITCOIN', 'PAYMENT_TYPE_BITCOIN');
 define('PAYMENT_TYPE_DWOLLA', 'PAYMENT_TYPE_DWOLLA');
 define('PAYMENT_TYPE_TOKEN', 'PAYMENT_TYPE_TOKEN');
 define('PAYMENT_TYPE_ANY', 'PAYMENT_TYPE_ANY');
-
-/*
-define('GATEWAY_AMAZON', 30);
-define('GATEWAY_BLUEPAY', 31);
-define('GATEWAY_BRAINTREE', 32);
-define('GATEWAY_GOOGLE', 33);
-define('GATEWAY_QUICKBOOKS', 35);
-*/
 
 $creditCards = [
             1 => ['card' => 'images/credit_cards/Test-Visa-Icon.png', 'text' => 'Visa'],

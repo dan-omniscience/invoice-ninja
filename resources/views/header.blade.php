@@ -25,6 +25,23 @@
       }
     }
 
+    @if (Auth::check() && Auth::user()->dark_mode)
+        body {
+            background: #000 !important;
+            color: white !important;
+        }
+
+        .panel-body {
+            background: #272822 !important;
+            /*background: #e6e6e6 !important;*/
+        }
+
+        .panel-default {
+            border-color: #444;
+        }
+    @endif
+
+
   </style>
 
   @include('script')
@@ -186,6 +203,7 @@
     });
   }
 
+<<<<<<< HEAD
   function showUnlink(userAccountId, userId) {
     NINJA.unlink = {
         'userAccountId': userAccountId,
@@ -199,6 +217,8 @@
     window.location = '{{ URL::to('/unlink_account') }}' + '/' + NINJA.unlink.userAccountId + '/' + NINJA.unlink.userId;
   }
 
+=======
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
   function wordWrapText(value, width)
   {
     @if (Auth::user()->account->auto_wrap)
@@ -249,12 +269,12 @@
     }, 2000);
 
     $('#search').blur(function(){
-      $('#search').css('width', '150px');
+      $('#search').css('width', '{{ Utils::isEnglish() ? 150 : 110 }}px');
       $('ul.navbar-right').show();
     });
 
     $('#search').focus(function(){
-      $('#search').css('width', '256px');
+      $('#search').css('width', '{{ Utils::isEnglish() ? 256 : 216 }}px');
       $('ul.navbar-right').hide();
       if (!window.hasOwnProperty('searchData')) {
         $.get('{{ URL::route('getSearchData') }}', function(data) {
@@ -309,7 +329,20 @@
       showSignUp();
     @endif
 
+    $('ul.navbar-settings, ul.navbar-history').hover(function () {
+        //$('.user-accounts').find('li').hide();
+        //$('.user-accounts').css({display: 'none'});
+        //console.log($('.user-accounts').dropdown(''))
+        if ($('.user-accounts').css('display') == 'block') {
+            $('.user-accounts').dropdown('toggle');
+        }
+    });
+
     @yield('onReady')
+
+    @if (Input::has('focus'))
+        $('#{{ Input::get('focus') }}').focus();
+    @endif
 
   });
 
@@ -361,9 +394,15 @@
                     {{ Auth::user()->getDisplayName() }}
                 @endif
               <span class="caret"></span>
+<<<<<<< HEAD
             </div>
           </button>
           <ul class="dropdown-menu user-accounts" role="menu">
+=======
+            </div>            
+          </button>			
+          <ul class="dropdown-menu user-accounts">
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
             @if (session(SESSION_USER_ACCOUNTS))
                 @foreach (session(SESSION_USER_ACCOUNTS) as $item)
                     @if ($item->user_id == Auth::user()->id)
@@ -372,9 +411,8 @@
                             'user_id' => $item->user_id,
                             'account_name' => $item->account_name,
                             'user_name' => $item->user_name,
-                            'account_key' => $item->account_key,
+                            'logo_path' => isset($item->logo_path) ? $item->logo_path : "",
                             'selected' => true,
-                            'show_remove' => count(session(SESSION_USER_ACCOUNTS)) > 1,
                         ])
                     @endif
                 @endforeach
@@ -385,9 +423,8 @@
                             'user_id' => $item->user_id,
                             'account_name' => $item->account_name,
                             'user_name' => $item->user_name,
-                            'account_key' => $item->account_key,
+                            'logo_path' => isset($item->logo_path) ? $item->logo_path : "",
                             'selected' => false,
-                            'show_remove' => count(session(SESSION_USER_ACCOUNTS)) > 1,
                         ])
                     @endif
                 @endforeach
@@ -395,21 +432,36 @@
                 @include('user_account', [
                     'account_name' => Auth::user()->account->name ?: trans('texts.untitled'),
                     'user_name' => Auth::user()->getDisplayName(),
-                    'account_key' => Auth::user()->account->account_key,
+                    'logo_path' => Auth::user()->account->getLogoPath(),
                     'selected' => true,
                 ])
+<<<<<<< HEAD
             @endif
             <li class="divider"></li>
             @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
                 <li>{!! link_to('/login?new_account=true', trans('texts.add_account')) !!}</li>
+=======
+            @endif            
+            <li class="divider"></li>                
+            @if (count(session(SESSION_USER_ACCOUNTS)) > 1)
+                <li>{!! link_to('/manage_companies', trans('texts.manage_companies')) !!}</li>
+            @elseif (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
+                <li>{!! link_to('/login?new_company=true', trans('texts.add_company')) !!}</li>
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
             @endif
             <li>{!! link_to('#', trans('texts.logout'), array('onclick'=>'logout()')) !!}</li>
           </ul>
         </div>
 
+<<<<<<< HEAD
       </div>
 
       <ul class="nav navbar-nav navbar-right">
+=======
+      </div>	
+      
+      <ul class="nav navbar-nav navbar-right navbar-settings"> 
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog" title="{{ trans('texts.settings') }}"/>
@@ -420,13 +472,17 @@
             <li>{!! link_to('company/products', uctrans('texts.product_library')) !!}</li>
             <li>{!! link_to('company/notifications', uctrans('texts.notifications')) !!}</li>
             <li>{!! link_to('company/import_export', uctrans('texts.import_export')) !!}</li>
-            <li><a href="{{ url('company/advanced_settings/invoice_settings') }}">{!! uctrans('texts.advanced_settings') . Utils::getProLabel(ACCOUNT_ADVANCED_SETTINGS) !!}</a></li>
+            <li><a href="{{ url('company/advanced_settings/invoice_design') }}">{!! uctrans('texts.advanced_settings') . Utils::getProLabel(ACCOUNT_ADVANCED_SETTINGS) !!}</a></li>
           </ul>
         </li>
       </ul>
 
 
+<<<<<<< HEAD
       <ul class="nav navbar-nav navbar-right">
+=======
+      <ul class="nav navbar-nav navbar-right navbar-history"> 
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-time" title="{{ trans('texts.history') }}"/>
@@ -436,7 +492,13 @@
                 <li><a href="#">{{ trans('texts.no_items') }}</a></li>
             @else
                 @foreach (Session::get(RECENTLY_VIEWED) as $link)
+<<<<<<< HEAD
                     <li><a href="{{ $link->url }}">{{ $link->name }}</a></li>
+=======
+                    @if (property_exists($link, 'accountId') && $link->accountId == Auth::user()->account_id)
+                        <li><a href="{{ $link->url }}">{{ $link->name }}</a></li>	
+                    @endif
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
                 @endforeach
             @endif
           </ul>
@@ -445,7 +507,11 @@
 
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
+<<<<<<< HEAD
           <input type="text" id="search" style="width: 150px"
+=======
+          <input type="text" id="search" style="width: {{ Utils::isEnglish() ? 150 : 110 }}px" 
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
             class="form-control" placeholder="{{ trans('texts.search') }}">
         </div>
       </form>
@@ -575,6 +641,7 @@
 </div>
 @endif
 
+<<<<<<< HEAD
 @if (Auth::check() && session(SESSION_USER_ACCOUNTS) && count(session(SESSION_USER_ACCOUNTS)))
 <div class="modal fade" id="unlinkModal" tabindex="-1" role="dialog" aria-labelledby="unlinkModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -597,6 +664,8 @@
 </div>
 @endif
 
+=======
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
 @if (Auth::check() && !Auth::user()->isPro())
   <div class="modal fade" id="proPlanModal" tabindex="-1" role="dialog" aria-labelledby="proPlanModalLabel" aria-hidden="true">
     <div class="modal-dialog large-dialog">
@@ -637,7 +706,12 @@
 @endif
 
 {{-- Per our license, please do not remove or modify this section. --}}
+<<<<<<< HEAD
 @if (!Utils::isNinja())
+=======
+@if (!Utils::isNinjaProd())
+<p>&nbsp;</p>
+>>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
 <div class="container">
   {{ trans('texts.powered_by') }} <a href="https://www.invoiceninja.com/?utm_source=powered_by" target="_blank">InvoiceNinja.com</a> |
   @if (Auth::user()->account->isWhiteLabel())
