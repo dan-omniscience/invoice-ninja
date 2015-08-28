@@ -203,22 +203,6 @@
     });
   }
 
-<<<<<<< HEAD
-  function showUnlink(userAccountId, userId) {
-    NINJA.unlink = {
-        'userAccountId': userAccountId,
-        'userId': userId
-    };
-    $('#unlinkModal').modal('show');
-    return false;
-  }
-
-  function unlinkAccount() {
-    window.location = '{{ URL::to('/unlink_account') }}' + '/' + NINJA.unlink.userAccountId + '/' + NINJA.unlink.userId;
-  }
-
-=======
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
   function wordWrapText(value, width)
   {
     @if (Auth::user()->account->auto_wrap)
@@ -394,15 +378,9 @@
                     {{ Auth::user()->getDisplayName() }}
                 @endif
               <span class="caret"></span>
-<<<<<<< HEAD
             </div>
           </button>
-          <ul class="dropdown-menu user-accounts" role="menu">
-=======
-            </div>            
-          </button>			
           <ul class="dropdown-menu user-accounts">
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
             @if (session(SESSION_USER_ACCOUNTS))
                 @foreach (session(SESSION_USER_ACCOUNTS) as $item)
                     @if ($item->user_id == Auth::user()->id)
@@ -435,33 +413,20 @@
                     'logo_path' => Auth::user()->account->getLogoPath(),
                     'selected' => true,
                 ])
-<<<<<<< HEAD
             @endif
             <li class="divider"></li>
-            @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
-                <li>{!! link_to('/login?new_account=true', trans('texts.add_account')) !!}</li>
-=======
-            @endif            
-            <li class="divider"></li>                
             @if (count(session(SESSION_USER_ACCOUNTS)) > 1)
                 <li>{!! link_to('/manage_companies', trans('texts.manage_companies')) !!}</li>
             @elseif (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
                 <li>{!! link_to('/login?new_company=true', trans('texts.add_company')) !!}</li>
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
             @endif
             <li>{!! link_to('#', trans('texts.logout'), array('onclick'=>'logout()')) !!}</li>
           </ul>
         </div>
 
-<<<<<<< HEAD
       </div>
 
-      <ul class="nav navbar-nav navbar-right">
-=======
-      </div>	
-      
-      <ul class="nav navbar-nav navbar-right navbar-settings"> 
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
+      <ul class="nav navbar-nav navbar-right navbar-settings">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-cog" title="{{ trans('texts.settings') }}"/>
@@ -478,11 +443,7 @@
       </ul>
 
 
-<<<<<<< HEAD
-      <ul class="nav navbar-nav navbar-right">
-=======
-      <ul class="nav navbar-nav navbar-right navbar-history"> 
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
+      <ul class="nav navbar-nav navbar-right navbar-history">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="glyphicon glyphicon-time" title="{{ trans('texts.history') }}"/>
@@ -492,13 +453,9 @@
                 <li><a href="#">{{ trans('texts.no_items') }}</a></li>
             @else
                 @foreach (Session::get(RECENTLY_VIEWED) as $link)
-<<<<<<< HEAD
-                    <li><a href="{{ $link->url }}">{{ $link->name }}</a></li>
-=======
                     @if (property_exists($link, 'accountId') && $link->accountId == Auth::user()->account_id)
-                        <li><a href="{{ $link->url }}">{{ $link->name }}</a></li>	
+                        <li><a href="{{ $link->url }}">{{ $link->name }}</a></li>
                     @endif
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
                 @endforeach
             @endif
           </ul>
@@ -507,11 +464,7 @@
 
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-<<<<<<< HEAD
-          <input type="text" id="search" style="width: 150px"
-=======
-          <input type="text" id="search" style="width: {{ Utils::isEnglish() ? 150 : 110 }}px" 
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
+          <input type="text" id="search" style="width: {{ Utils::isEnglish() ? 150 : 110 }}px"
             class="form-control" placeholder="{{ trans('texts.search') }}">
         </div>
       </form>
@@ -641,31 +594,6 @@
 </div>
 @endif
 
-<<<<<<< HEAD
-@if (Auth::check() && session(SESSION_USER_ACCOUNTS) && count(session(SESSION_USER_ACCOUNTS)))
-<div class="modal fade" id="unlinkModal" tabindex="-1" role="dialog" aria-labelledby="unlinkModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">{{ trans('texts.unlink_account') }}</h4>
-      </div>
-
-      <div class="container">
-        <h3>{{ trans('texts.are_you_sure') }}</h3>
-      </div>
-
-      <div class="modal-footer" id="signUpFooter">
-        <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('texts.cancel') }}</button>
-        <button type="button" class="btn btn-primary" onclick="unlinkAccount()">{{ trans('texts.unlink') }}</button>
-      </div>
-    </div>
-  </div>
-</div>
-@endif
-
-=======
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
 @if (Auth::check() && !Auth::user()->isPro())
   <div class="modal fade" id="proPlanModal" tabindex="-1" role="dialog" aria-labelledby="proPlanModalLabel" aria-hidden="true">
     <div class="modal-dialog large-dialog">
@@ -706,12 +634,8 @@
 @endif
 
 {{-- Per our license, please do not remove or modify this section. --}}
-<<<<<<< HEAD
-@if (!Utils::isNinja())
-=======
 @if (!Utils::isNinjaProd())
 <p>&nbsp;</p>
->>>>>>> ff0a37f1d8a8a80b940ebf2ee5e66ac3b5af3ba5
 <div class="container">
   {{ trans('texts.powered_by') }} <a href="https://www.invoiceninja.com/?utm_source=powered_by" target="_blank">InvoiceNinja.com</a> |
   @if (Auth::user()->account->isWhiteLabel())
