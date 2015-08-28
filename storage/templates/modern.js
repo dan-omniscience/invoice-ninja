@@ -19,7 +19,7 @@
             "style": "invoiceLineItemsTable",            
             "table": {
                 "headerRows": 1,
-                "widths": "$$invoiceLineItemColumns",
+                "widths": "$invoiceLineItemColumns",
                 "body": "$invoiceLineItems"
             },
             "layout": {
@@ -214,7 +214,3 @@
             "invoiceNumber": {
                 "bold": true
             }
-
-        },
-        "pageMargins": [40, 80, 40, 50]
-    }

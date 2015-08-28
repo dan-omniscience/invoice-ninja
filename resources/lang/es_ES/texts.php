@@ -533,6 +533,7 @@ return array (
   'less_fields' => 'Less Fields',
   'client_name' => 'Client Name',
   'pdf_settings' => 'PDF Settings',
+  'utf8_invoices' => 'Cyrillic Support <sup>Beta</sup>',
   'product_settings' => 'Product Settings',
   'auto_wrap' => 'Auto Line Wrap',
   'duplicate_post' => 'Warning: the previous page was submitted twice. The second submission had been ignored.',
@@ -632,9 +633,6 @@ return array (
   'unlinked_account' => 'Successfully unlinked accounts',
   'login' => 'Login',
   'or' => 'or',
-
-);
-
 
   'email_error' => 'There was a problem sending the email',
   'confirm_recurring_timing' => 'Note: emails are sent at the start of the hour.',

@@ -574,6 +574,7 @@ return array (
   'less_fields' => 'Weniger Felder',
   'client_name' => 'Kundenname',
   'pdf_settings' => 'PDF Einstellungen',
+  'utf8_invoices' => 'Cyrillic Unterstützung <sup>Beta</sup>',
   'product_settings' => 'Produkt Einstellungen',
   'auto_wrap' => 'Automatischer Zeilenumbruch',
   'duplicate_post' => 'Achtung: Die vorherige Seite wurde zweimal abgeschickt. Das zweite Abschicken wurde ignoriert.',
